@@ -16,7 +16,7 @@ This project is an AI-powered tool designed to detect, analyze, and visualize th
 ---
 
 ## 🛠️ Tech Stack
-
+    
 ### 🎨 Frontend
 - **React.js** – Component-based UI.  
 - **TailwindCSS** – Modern responsive styling.  

@@ -37,7 +37,6 @@ try:
 except Exception as e:
     raise SystemExit(f"Failed to init genai client: {e}")
 
-# --- optional SerpApi (web evidence) ---
 SERPAPI_KEY = os.getenv("SERPAPI_KEY")
 
 # --- Transformers (HF) auxiliary ML ---
@@ -65,15 +64,11 @@ SOURCE_TRUST = {
     "washingtonpost.com": 0.9,
 }
 
-# ------------------------
+
 # Helpers
-# ------------------------
+
 def compute_modal_accuracy(verdicts: list, true_labels: list) -> float:
-    """
-    verdicts: list of lists of model outputs per claim, e.g. [["True","False"], ["True","True"], ...]
-    true_labels: list of ground truth labels per claim, e.g. ["True", "True", ...]
-    Returns: modal accuracy (float)
-    """
+    
     if not verdicts or not true_labels or len(verdicts) != len(true_labels):
         return 0.0
     correct = 0
@@ -173,10 +168,7 @@ def _domain_from_url(url: str) -> str:
         return ""
 
 def _is_host_public(url: str) -> bool:
-    """
-    Return False if the hostname resolves to private/local/reserved addresses or is an obvious local name.
-    Protects against SSRF attempts when downloading arbitrary URLs.
-    """
+    
     try:
         parsed = urlparse(url)
         host = parsed.hostname or ""
@@ -213,9 +205,7 @@ def phishing_checks(url: str) -> dict:
         out["virustotal"] = virustotal_url_check(url, VIRUSTOTAL_KEY)
     return out
 
-# ------------------------
-# SerpApi wrappers (optional) with caching
-# ------------------------
+
 @lru_cache(maxsize=256)
 def serpapi_web_search(query: str, num: int = 6) -> dict:
     if not SERPAPI_KEY:
@@ -244,9 +234,9 @@ def serpapi_reverse_image(image_url: str, num: int = 6) -> dict:
         logger.exception("SerpApi reverse failed")
         return {"available": True, "error": str(e)}
 
-# ------------------------
+
 # Image analysis helpers
-# ------------------------
+
 MAX_BYTES = 6 * 1024 * 1024  # 6MB
 ALLOWED_CONTENT_PREFIXES = ("image/",)
 
@@ -332,9 +322,9 @@ def analyze_image_url(image_url: str) -> dict:
     result["serpapi_reverse"] = serpapi_reverse_image(image_url) if SERPAPI_KEY else {"available": False}
     return result
 
-# ------------------------
+
 # Gemini functions
-# ------------------------
+
 GENAI_MODEL = os.getenv("GENAI_MODEL", "gemini-2.5-flash")
 
 def gemini_generate_claim_from_image(image_url: str) -> Optional[str]:
@@ -478,9 +468,9 @@ def gemini_verify_claim(claim: str, serpapi_web: dict, image_analysis: dict) -> 
         logger.exception("Gemini verify failed")
         return {"verdict": "Unclear", "overall": "Gemini failure", "issues": ["gemini_failure"], "citations": []}
 
-# ------------------------
+
 # HF zero-shot
-# ------------------------
+
 def hf_zero_shot_classify(claim: str) -> Dict[str, Any]:
     if not zero_shot or not claim:
         return {"error": "hf-unavailable"}
@@ -490,9 +480,9 @@ def hf_zero_shot_classify(claim: str) -> Dict[str, Any]:
         logger.exception("HF zero-shot failed")
         return {"error": "hf-failed"}
 
-# ------------------------
+
 # Aggregator & combiner
-# ------------------------
+
 def aggregate_search_results(serpapi_result: dict) -> Dict[str, Any]:
     if not serpapi_result or not serpapi_result.get("available") or not serpapi_result.get("result"):
         return {"evidence": [], "consensus": {"contradicts_claim": False, "top_trust_avg": 0.5, "top_domains": {}}, "raw_snippets": ""}
@@ -547,9 +537,6 @@ def _map_hf_label_to_score(hf_result: dict) -> float:
         return 0.0
 
 def combine_signals(gemini_verdict: dict, hf_result: dict, evidence_agg: dict) -> Dict[str, Any]:
-    """
-    Revised combiner that maps to exactly: True | False | Misleading | Unclear
-    """
     reasons = []
     g_ver = (gemini_verdict or {}).get("verdict", "Unclear")
     g_overall = (gemini_verdict or {}).get("overall", "")
@@ -570,8 +557,6 @@ def combine_signals(gemini_verdict: dict, hf_result: dict, evidence_agg: dict) -
     final_score = w_g * g_score + w_h * hf_score + w_e * trust_norm
     confidence = min(0.99, max(0.05, 0.4 + abs(final_score) * 0.6))
 
-    # Decision thresholds — tuned conservatively.
-    # final_score roughly in [-1,1]
     if final_score >= 0.45:
         label = "True"
         reasons.append("Aggregated signals indicate likely truth")
@@ -579,7 +564,6 @@ def combine_signals(gemini_verdict: dict, hf_result: dict, evidence_agg: dict) -
         label = "False"
         reasons.append("Aggregated signals indicate likely falsehood")
     else:
-        # borderline: detect likely misleading if models point negative and evidence ambiguous
         if evidence_count >= 2 and hf_score < 0 and final_score < 0.2:
             label = "Misleading"
             reasons.append("Evidence / classifier suggest partial inaccuracy or omission")
@@ -587,13 +571,10 @@ def combine_signals(gemini_verdict: dict, hf_result: dict, evidence_agg: dict) -
             label = "Unclear"
             reasons.append("Insufficient agreement between models and web evidence")
 
-    # If multiple high-trust sources strongly corroborate -> force True
     if evidence_count >= 2 and top_trust >= 0.7:
         if label in ("Unclear", "Misleading"):
             reasons.append("Multiple high-trust outlets corroborate the core event")
             label = "True"
-
-    # Add Gemini notes
     if g_issues:
         reasons.extend(g_issues if isinstance(g_issues, list) else [str(g_issues)])
     if g_overall:
@@ -601,9 +582,9 @@ def combine_signals(gemini_verdict: dict, hf_result: dict, evidence_agg: dict) -
 
     return {"final_verdict": label, "confidence": round(confidence, 3), "reasons": reasons, "final_score": round(final_score, 3)}
 
-# ------------------------
-# Q/A formatting (user-friendly)
-# ------------------------
+
+# Q/A formatting 
+
 def _trust_score_pct_from_final_score(final_score: float) -> int:
     """Map final_score (-1..1) to 0..100; clamp."""
     try:
@@ -614,44 +595,32 @@ def _trust_score_pct_from_final_score(final_score: float) -> int:
         return 50
 
 def format_user_friendly_explanation(report_entry: dict) -> str:
-    """
-    Return exactly three Q&A items:
-      1) Why did we reach this verdict?  -> direct answer (short reasons only)
-      2) How was it verified?            -> sources / checks used
-      3) What should you do next?        -> actionable next steps
-    This version is robust to reasons being strings or dicts.
-    """
 
     def _reason_to_text(r) -> str:
-        # Normalize a single reason entry (string/dict/other) to a short string
         try:
             if r is None:
                 return ""
             if isinstance(r, str):
                 return r.strip()
             if isinstance(r, dict):
-                # Prefer common keys if present
                 for key in ("reason", "message", "detail", "issue", "note"):
                     if key in r and r[key]:
                         return str(r[key])[:300]
-                # Fallback: stringify limited JSON
                 try:
                     return json.dumps(r, ensure_ascii=False)[:300]
                 except Exception:
                     return str(r)[:300]
-            # Fallback for other types
             return str(r)[:300]
         except Exception:
             return ""
 
     claim = report_entry.get("claim", "").strip() or "(no claim provided)"
 
-    # Q1: Why — build a short reason summary from report_entry["reasons"]
+    # Q1: Why — 
     reasons = report_entry.get("reasons", []) or []
     if isinstance(reasons, (str, dict)):
         reasons = [reasons]
 
-    # Convert up to 3 reasons to text
     reason_texts = []
     for r in reasons[:3]:
         t = _reason_to_text(r)
@@ -660,7 +629,6 @@ def format_user_friendly_explanation(report_entry: dict) -> str:
     if reason_texts:
         reasons_text = "; ".join(reason_texts)
     else:
-        # fallback to Gemini note or generic text
         gem_notes = (report_entry.get("gemini_verdict") or {}).get("overall", "")
         reasons_text = gem_notes[:300] if gem_notes else "No strong model reasons were returned."
 
@@ -689,7 +657,6 @@ def format_user_friendly_explanation(report_entry: dict) -> str:
         checks.append("HF zero-shot classifier")
     if report_entry.get("image_analysis") and report_entry["image_analysis"].get("fetched"):
         checks.append("Image analysis (EXIF / ELA / pHash / reverse-image)")
-    # Normalize phishing_analysis to a dict and ensure nested fields are dicts
     phish = report_entry.get("phishing_analysis") or {}
     sb = (phish.get("safe_browsing") or {})
     vt = (phish.get("virustotal") or {})
@@ -726,7 +693,6 @@ def format_user_friendly_explanation(report_entry: dict) -> str:
         next_steps.append("If this concerns safety or fraud, check official alerts or regulator pages.")
 
     # If phishing checks flagged the site, emphasize safety first
-    # Use the normalized sb/vt dicts to avoid NoneType.get errors
     if (sb.get("safe") is False) or (vt.get("safe") is False):
         next_steps.insert(0, "Do NOT click links from this page; treat it as potentially unsafe and report it.")
 
@@ -734,15 +700,7 @@ def format_user_friendly_explanation(report_entry: dict) -> str:
 
     return f"{q1}\n\n{q2}\n\n{q3}"
 
-# ------------------------
-# Robust fetch_article_text_from_url (upgraded)
-# - SSRF-protected
-# - tries JSON-LD extraction first (works for MSN and many publishers)
-# - then OpenGraph/meta description
-# - then readability-lxml (optional)
-# - then <article>/<main> paragraphs
-# - returns (article_text, headline)
-# ------------------------
+
 def _extract_jsonld_from_soup(soup: BeautifulSoup) -> Optional[dict]:
     try:
         scripts = soup.find_all("script", type="application/ld+json")
@@ -770,21 +728,12 @@ def _extract_jsonld_from_soup(soup: BeautifulSoup) -> Optional[dict]:
     return None
 
 def fetch_article_text_from_url(url: str) -> tuple[str, str]:
-    """
-    Robust article extractor:
-    - Blocks private hosts (SSRF protection)
-    - Tries JSON-LD extraction (works for MSN and many publishers)
-    - Falls back to OpenGraph/meta, readability-lxml, <article>/<main> paragraph extraction,
-      and finally meta description.
-    Returns: (article_text, headline)
-    """
     try:
         if not _is_host_public(url):
             logger.warning("Blocked fetch_article_text_from_url for private host: %s", url)
             return "", ""
 
         headers = {"User-Agent": "newsorchestra/1.0"}
-        # small retry loop for transient issues
         html = ""
         for attempt in range(2):
             try:
@@ -806,10 +755,8 @@ def fetch_article_text_from_url(url: str) -> tuple[str, str]:
         # 1) JSON-LD extraction (best for MSN and other modern publishers)
         jld = _extract_jsonld_from_soup(soup)
         if jld:
-            # Many JSON-LD objects may have articleBody or description and headline
             headline = jld.get("headline") or jld.get("name") or ""
             body = jld.get("articleBody") or jld.get("description") or ""
-            # Some MSN entries store text as a list in "articleBody" or in "mainEntityOfPage"
             if isinstance(body, list):
                 body = " ".join([str(x) for x in body if x])
             if body:
@@ -823,7 +770,7 @@ def fetch_article_text_from_url(url: str) -> tuple[str, str]:
 
         # 3) readability fallback if available
         try:
-            from readability import Document  # readability-lxml, optional
+            from readability import Document 
             doc = Document(html)
             article_html = doc.summary()
             headline = doc.short_title() or ""
@@ -835,7 +782,7 @@ def fetch_article_text_from_url(url: str) -> tuple[str, str]:
         except Exception:
             logger.debug("readability extraction not available or failed; using BeautifulSoup fallback")
 
-        # 4) BeautifulSoup fallback: prefer <article> or <main>
+        # 4) BeautifulSoup fallback
         article_tag = soup.find("article")
         if article_tag:
             paras = [p.get_text(" ", strip=True) for p in article_tag.find_all("p")]
@@ -856,12 +803,12 @@ def fetch_article_text_from_url(url: str) -> tuple[str, str]:
         logger.exception("fetch_article_text_from_url failed")
         return "", ""
 
-# ------------------------
-# on_analyze handler (upgraded)
+
+# on_analyze handler
 # - uses SERP fallback for snippets when article extraction fails
 # - surfaces QA fallback note
 # - infers phishing_tag for frontend convenience
-# ------------------------
+
 def on_analyze(text_or_url: str, image_url: str, run_serp: bool):
     try:
         txt = (text_or_url or "").strip()
@@ -872,7 +819,6 @@ def on_analyze(text_or_url: str, image_url: str, run_serp: bool):
         if is_url:
             url = txt
             article_text, headline = fetch_article_text_from_url(txt)
-            # If extraction failed, compose a SERP-snippet fallback (if available)
             if not article_text and headline and run_serp and SERPAPI_KEY:
                 serpapi_result = serpapi_web_search(headline, num=8)
                 snippets = [res.get("snippet", "") for res in serpapi_result.get("result", {}).get("organic_results", [])]
@@ -884,7 +830,6 @@ def on_analyze(text_or_url: str, image_url: str, run_serp: bool):
                         "Analysis used SERP snippets as a fallback — verify date/location in original sources."
                     )
                 else:
-                    # minimal fallback so claim extraction still has content
                     article_text = f"(No extractable article text) Headline: {headline}"
                     qa_fallback_note = (
                         "Note: no article text could be extracted; analysis used the page headline only."
@@ -892,7 +837,7 @@ def on_analyze(text_or_url: str, image_url: str, run_serp: bool):
         else:
             article_text = txt or ""
 
-        claim = ""  # Orchestrator will generate/extract claims
+        claim = ""  
         report = ORCH.run(
             claim_text=claim,
             article_text=article_text,
@@ -902,15 +847,12 @@ def on_analyze(text_or_url: str, image_url: str, run_serp: bool):
         )
 
         extracted_claims = [r.get("claim") for r in report.get("reports", [])]
-        # Get the first report's QA summary for quick display (if multiple claims you can adapt)
         qa_text = ""
         if report.get("reports"):
-            # prefer the report QA summary; if missing and we have a serp fallback note, surface it
             qa_text = report["reports"][0].get("qa_summary", "") or ""
             if (not qa_text) and qa_fallback_note:
                 qa_text = qa_fallback_note
 
-            # attach a phishing_tag to the first report and to the returned phishing object
             summary_phish_flag = report.get("summary", {}).get("phishing_flag")
             if summary_phish_flag is True:
                 phishing_tag = "Unsafe"
@@ -960,9 +902,9 @@ def verdict_to_str(v):
         return "Unclear"
     return str(v).strip()
 
-# ------------------------
+
 # Orchestrator
-# ------------------------
+
 class Orchestrator:
     def run(self, claim_text: str, article_text: Optional[str], url: Optional[str], image_url: Optional[str],
             run_serpapi: bool = True) -> dict:
@@ -970,7 +912,6 @@ class Orchestrator:
         article_text = sanitize_text(article_text or "")
 
         image_analysis = analyze_image_url(image_url) if image_url else None
-        # Always normalize phish_report to a dict to avoid NoneType.get errors later
         phish_report = phishing_checks(url) if url else {}
         if phish_report is None:
             phish_report = {}
@@ -1012,7 +953,6 @@ class Orchestrator:
                     fallback_claim = f"Auto-generated (unverified): Image provided ({image_url}). Content unclear.{(' ELA=' + str(ela)) if ela else ''}{(' phash=' + str(phash)) if phash else ''}{serp_note}"
                     claims_to_check = [fallback_claim]
 
-        # deduplicate
         unique_claims = []
         seen = set()
         for c in claims_to_check:
@@ -1023,7 +963,6 @@ class Orchestrator:
                 continue
             seen.add(key)
             unique_claims.append(c)
-     # --- NEW: collect verdicts per claim for modal accuracy ---
         verdicts_per_claim = []
 
         reports = []
@@ -1040,9 +979,6 @@ class Orchestrator:
             evidence_agg = aggregate_search_results(serpapi_for_claim)
             combined = combine_signals(gemini_verdict, hf_result, evidence_agg)
 
-            # --- MEDIA AUTHENTICITY OVERRIDE ---
-            # If the image is indicated as AI-generated / fabricated by model issues, verdict text,
-            # or reverse image/web evidence, force final verdict to False (image is fake).
             try:
                 media_flagged_fake = False
                 # 1) check gemini_verdict issues (structured)
@@ -1078,7 +1014,7 @@ class Orchestrator:
                             media_flagged_fake = True
                             break
 
-                # 4) optionally check aggregated evidence titles/snippets
+                # 4)check aggregated evidence titles/snippets
                 for e in evidence_agg.get("evidence", [])[:6]:
                     try:
                         txt = (e.get("title", "") or "") + " " + (e.get("snippet", "") or "")
@@ -1090,17 +1026,13 @@ class Orchestrator:
                         continue
 
                 if media_flagged_fake:
-                    # Apply override: force False
                     combined["final_verdict"] = "False"
-                    # make confidence stronger (but bounded)
                     combined["confidence"] = max(combined.get("confidence", 0.4), 0.6)
-                    # prepend a clear reason dict
                     reasons = combined.get("reasons", []) or []
                     media_reason = {
                         "type": "AI_GENERATION",
                         "description": "Media-authenticity override: image appears to be AI-generated/fabricated per model findings or trusted fact-checks."
                     }
-                    # ensure not duplicate
                     try:
                         if not any(isinstance(r, dict) and r.get("type") == "AI_GENERATION" for r in reasons):
                             reasons.insert(0, media_reason)
@@ -1109,7 +1041,6 @@ class Orchestrator:
                     combined["reasons"] = reasons
             except Exception:
                 logger.exception("Media override check failed")
-           # --- NEW: append verdicts for modal accuracy ---
             verdicts_per_claim.append([
                 verdict_to_str(gemini_verdict.get("verdict")) if gemini_verdict else "Unclear",
                 verdict_to_str(hf_result.get("labels", ["Unclear"])[0]) if hf_result and isinstance(hf_result, dict) and "labels" in hf_result else "Unclear",
@@ -1117,7 +1048,6 @@ class Orchestrator:
             ])
 
 
-            # normalized trust score for display
             trust_pct = _trust_score_pct_from_final_score(combined.get("final_score", 0.0))
 
             report_entry = {
@@ -1136,11 +1066,9 @@ class Orchestrator:
                 "trust_score_pct": trust_pct
             }
 
-            # user-friendly Q&A summary per claim
             report_entry["qa_summary"] = format_user_friendly_explanation(report_entry)
 
             reports.append(report_entry)
-        # --- NEW: compute modal accuracy if ground truth available ---
         ground_truth_labels = [verdict_to_str(r.get("truth_label")) for r in reports if r.get("truth_label")]
 
         if ground_truth_labels:
@@ -1162,8 +1090,6 @@ class Orchestrator:
             dominant = max(summary["counts"].items(), key=lambda x: x[1])[0]
             summary["dominant_verdict"] = dominant
 
-        # Add phishing flag to summary if any phishing check flagged the site
-        # Use safe normalization so nested None values can't cause AttributeError
         if phish_report:
             sb = (phish_report or {}).get("safe_browsing") or {}
             vt = (phish_report or {}).get("virustotal") or {}
@@ -1183,9 +1109,9 @@ class Orchestrator:
 
 ORCH = Orchestrator()
 
-# ------------------------
+
 # Gradio UI
-# ------------------------
+
 title = "NewsOrchestra — Gemini multimodal verifier (upgraded)"
 description = "Gemini required. Set GEMINI_API_KEY. SerpApi optional. SAFE_BROWSING_KEY/VIRUSTOTAL_KEY optional."
 
@@ -1196,15 +1122,13 @@ with gr.Blocks(title=title) as demo:
     run_serp_cb = gr.Checkbox(label="Run SerpApi (requires SERPAPI_KEY)", value=bool(SERPAPI_KEY))
     analyze_btn = gr.Button("Analyze")
 
-    # Outputs: full report JSON, friendly Q&A summary (plain text), extracted claims list, phishing analysis JSON
     out_json = gr.JSON(label="Full Report (JSON)")
     out_qa = gr.Textbox(label="Q&A Summary (user-friendly)", lines=12)
     out_claims = gr.JSON(label="Extracted Claims")
     out_phish = gr.JSON(label="Phishing Analysis")
 
-# ------------------------
-# on_analyze handler binding for Gradio (reused function)
-# ------------------------
+
+
 def _gradio_on_analyze(text_or_url, image_url, run_serp):
     return on_analyze(text_or_url, image_url, run_serp)
 
