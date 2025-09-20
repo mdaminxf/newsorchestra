@@ -1,0 +1,11 @@
+# Core dependencies
+requests
+beautifulsoup4
+gradio>=4.0.0
+transformers
+pillow
+imagehash
+google-genai>=0.1.0
+python-whois
+# Optional but recommended
+readability-lxml
