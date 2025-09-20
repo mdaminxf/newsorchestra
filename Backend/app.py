@@ -21,7 +21,7 @@ from transformers import pipeline
 from PIL import Image, ImageChops, ImageStat, ExifTags
 import imagehash
 
-# --- GEMINI (genai) REQUIRED ---
+# --- GEMINI--
 try:
     from google import genai
 except Exception:
@@ -39,7 +39,7 @@ except Exception as e:
 
 SERPAPI_KEY = os.getenv("SERPAPI_KEY")
 
-# --- Transformers (HF) auxiliary ML ---
+# --- Transformers auxiliary ML ---
 HF_ZERO_SHOT = os.getenv("HF_ZERO_SHOT", "facebook/bart-large-mnli")
 try:
     zero_shot = pipeline("zero-shot-classification", model=HF_ZERO_SHOT)
