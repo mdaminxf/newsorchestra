@@ -54,21 +54,15 @@ This project is an AI-powered tool designed to detect, analyze, and visualize th
 4. 🌐 SerpAPI fetches real-time trusted sources.  
 5. 📊 Dashboard shows **results, credibility score & spread analysis**.  
 
----
-
 ## 📸 Screenshots
-Input Fields
-![Input Fields](https://github.com/mdaminxf/newsorchestra/blob/main/public/image%20(4).png)
 
-Analysis Summary
-![Analysis Summary](https://github.com/mdaminxf/newsorchestra/blob/main/public/image%20(1).png)
+| Input Fields | Analysis Summary |
+|--------------|------------------|
+| ![Input Fields](https://github.com/mdaminxf/newsorchestra/blob/main/public/image%20(4).png) | ![Analysis Summary](https://github.com/mdaminxf/newsorchestra/blob/main/public/image%20(1).png) |
 
-Ai Resoning
-![Ai Resoning](https://github.com/mdaminxf/newsorchestra/blob/main/public/image%20(2).png)
-
-Evidence Section
-![Evidence Section](https://github.com/mdaminxf/newsorchestra/blob/main/public/image%20(3).png)
----
+| AI Reasoning | Evidence Section |
+|--------------|------------------|
+| ![AI Reasoning](https://github.com/mdaminxf/newsorchestra/blob/main/public/image%20(2).png) | ![Evidence Section](https://github.com/mdaminxf/newsorchestra/blob/main/public/image%20(3).png) |
 
 ## 🔮 Future Enhancements
 - 🤖 **Vertex AI Integration** – Leverage Google Cloud’s Vertex AI for scalable training and inference.  
