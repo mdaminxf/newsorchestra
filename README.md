@@ -69,4 +69,5 @@ This project is an AI-powered tool designed to detect, analyze, and visualize th
 ---
 
 ## 👨‍💻 Contributors
-- **Your Name** – Developer & Researcher  
+- **Anisa Fatima** - Team Lead & Designer
+- **Muhammad Amin Jilani** – Developer & Researcher  
