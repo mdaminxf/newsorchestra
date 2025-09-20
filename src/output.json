@@ -1,0 +1,1115 @@
+{
+  "claims_analyzed": 3,
+  "reports": [
+    {
+      "claim": "Apple launched new features across its devices to help parents protect children and teens online.",
+      "context": "Apple Introduces New Online Safety Tools for Youth Apple has launched new features across its devices to help parents protect children and teens online. These tools include enhanced communication safety and expanded parental controls.",
+      "image_analysis": null,
+      "hf_classifier": {
+        "error": "hf-unavailable"
+      },
+      "gemini_verdict": {
+        "verdict": "True",
+        "overall": "Multiple sources, including Apple's official Newsroom, confirm that Apple has launched or expanded new features across its devices designed to help parents protect children and teens online. These features include updates to Communication Limits for contact approval, simpler child account management, and 'Age Assurance' technology for sharing a child's age with app developers.",
+        "issues": [
+          {
+            "type": "Irrelevant Information",
+            "description": "One piece of evidence from Reddit, while mentioning 'Apple expands tools to help parents protect kids and teens,' then discusses an updated refund policy, which is not relevant to features for online child protection."
+          }
+        ],
+        "citations": [
+          {
+            "source": "Apple's latest tools to help protect kids and teens online ...",
+            "snippet": "Apple's latest tools to help protect kids and teens online ... :: Updates to Communication Limits, which give parents the ability to remotely approve new contacts for their children when using Apple apps.",
+            "url": "https://www.apple.com/newsroom/2025/09/apples-latest-tools-to-help-protect-kids-and-teens-online-now-available/"
+          },
+          {
+            "source": "Apple expands tools to help parents protect kids and teens ...",
+            "snippet": "Apple expands tools to help parents protect kids and teens online · Managing Child Accounts Becomes Simpler · Sharing a Kid's Age Range with Apps.",
+            "url": "https://www.apple.com/newsroom/2025/06/apple-expands-tools-to-help-parents-protect-kids-and-teens-online/"
+          },
+          {
+            "source": "Apple Launches 'Age Assurance' Tech As US States Mull ...",
+            "snippet": "Apple announced a new feature allowing parents to share a child's age with app developers without exposing sensitive information, ...",
+            "url": "https://tech.slashdot.org/story/25/02/28/0046233/apple-launches-age-assurance-tech-as-us-states-mull-social-media-laws"
+          },
+          {
+            "source": "Families",
+            "snippet": "We're continually designing new features and parental controls to help make sure children use their devices in the ways their parents want them to.",
+            "url": "https://www.apple.com/families/"
+          }
+        ]
+      },
+      "serpapi_result": {
+        "available": true,
+        "result": {
+          "search_metadata": {
+            "id": "68c9347b5c930130e90b500d",
+            "status": "Success",
+            "json_endpoint": "https://serpapi.com/searches/db299e6b1d25510a/68c9347b5c930130e90b500d.json",
+            "pixel_position_endpoint": "https://serpapi.com/searches/db299e6b1d25510a/68c9347b5c930130e90b500d.json_with_pixel_position",
+            "created_at": "2025-09-16 09:57:15 UTC",
+            "processed_at": "2025-09-16 09:57:15 UTC",
+            "google_url": "https://www.google.com/search?q=Apple+launched+new+features+across+its+devices+to+help+parents+protect+children+and+teens+online.&oq=Apple+launched+new+features+across+its+devices+to+help+parents+protect+children+and+teens+online.&num=6&sourceid=chrome&ie=UTF-8",
+            "raw_html_file": "https://serpapi.com/searches/db299e6b1d25510a/68c9347b5c930130e90b500d.html",
+            "total_time_taken": 1.19
+          },
+          "search_parameters": {
+            "engine": "google",
+            "q": "Apple launched new features across its devices to help parents protect children and teens online.",
+            "google_domain": "google.com",
+            "num": "6",
+            "device": "desktop"
+          },
+          "search_information": {
+            "query_displayed": "Apple launched new features across its devices to help parents protect children and teens online.",
+            "total_results": 16100000,
+            "time_taken_displayed": 0.46,
+            "organic_results_state": "Results for exact spelling"
+          },
+          "inline_images": [
+            {
+              "source": "https://www.apple.com/newsroom/2025/06/apple-expands-tools-to-help-parents-protect-kids-and-teens-online/",
+              "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxokfD2x_nqpAuvM1bIUuWC9d1qkiTHrE3qhDK7_TmQLcsVgu-ua8MDEg&s",
+              "original": "https://www.apple.com/newsroom/images/2025/06/apple-expands-tools-to-help-parents-protect-kids-and-teens-online/article/Apple-WWDC25-iOS-26-child-accounts-02_inline.jpg.large.jpg",
+              "title": "Apple expands tools to help parents protect kids and teens ...",
+              "source_name": "Apple"
+            },
+            {
+              "source": "https://www.apple.com/tn/newsroom/2025/06/apple-expands-tools-to-help-parents-protect-kids-and-teens-online/",
+              "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRT6j5RCVo6QUJcb1QUzXPoKKni-Tumb53FBBDaKLjJupKkap0xVVWsbDc&s",
+              "original": "https://www.apple.com/newsroom/images/2025/06/apple-expands-tools-to-help-parents-protect-kids-and-teens-online/tile/Apple-WWDC25-iOS-26-child-accounts-01-lp.jpg.news_app_ed.jpg",
+              "title": "Apple expands tools to help parents protect kids and teens ...",
+              "source_name": "Apple"
+            },
+            {
+              "source": "https://www.apple.com/newsroom/2025/06/apple-expands-tools-to-help-parents-protect-kids-and-teens-online/",
+              "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwYXsUQ4Gw93u-h9V412wruNYNzlawtFM4SiXpfTIcPYo02vog5P2Lx6g&s",
+              "original": "https://www.apple.com/newsroom/images/2025/06/apple-expands-tools-to-help-parents-protect-kids-and-teens-online/article/Apple-WWDC25-iOS-26-communication-limits-and-safety_inline.jpg.large.jpg",
+              "title": "Apple expands tools to help parents protect kids and teens ...",
+              "source_name": "Apple"
+            },
+            {
+              "source": "https://www.facebook.com/FOX10Phoenix/posts/apple-is-rolling-out-new-parental-control-features-in-ios-26-that-give-parents-m/1039595485041244/",
+              "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPKmkPC2sTGnX-76yqblzrASj0dAHeTVCXpca2JOhFhlaUhcZR3UQ1V6o&s",
+              "original": "https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=1039595461707913",
+              "title": "Apple is rolling out new parental control features in iOS 26 ...",
+              "source_name": "Facebook"
+            },
+            {
+              "source": "https://www.apple.com/newsroom/2025/06/apple-expands-tools-to-help-parents-protect-kids-and-teens-online/",
+              "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHTPeFNNaklbndEb-d25NcJVtQBYOs-x_3eOxFoQadFOPAhpAaoTVvEgE&s",
+              "original": "https://www.apple.com/newsroom/images/2025/06/apple-expands-tools-to-help-parents-protect-kids-and-teens-online/article/Apple-WWDC25-iOS-26-child-accounts-03_inline.jpg.large.jpg",
+              "title": "Apple expands tools to help parents protect kids and teens ...",
+              "source_name": "Apple"
+            },
+            {
+              "source": "https://www.facebook.com/FOX13TampaBay/posts/apple-is-rolling-out-new-parental-control-features-in-ios-26-that-give-parents-m/1169660405207487/",
+              "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO9yWQDuYeeoqfDsEZCnarY5yECox_pxoug23IhzJhZzH297n0gnH3G-w&s",
+              "original": "https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=1169660368540824",
+              "title": "Apple is rolling out new parental control features in iOS 26 ...",
+              "source_name": "Facebook"
+            },
+            {
+              "source": "https://www.apple.com/newsroom/2025/09/apples-latest-tools-to-help-protect-kids-and-teens-online-now-available/?1757955572",
+              "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT417QXVO2uimpufhfr8YQEP4uPep37cGw-qXK8lW-qRR3m7YhlPP296B8&s",
+              "original": "https://www.apple.com/newsroom/images/logos/quick-reads-logos/Apple-Child_Accounts.jpg.og.jpg?202509152326",
+              "title": "Apple's latest tools to help protect kids and teens online ...",
+              "source_name": "Apple"
+            },
+            {
+              "source": "https://support.apple.com/en-us/105121",
+              "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2e9NPZ1FlWDRNUzYhcsxwUvVlmxkIY6Uhw3v8s0OXo_vCfaDs9teFQvA&s",
+              "original": "https://cdsassets.apple.com/live/7WUAS350/images/apple-account/ios-18-1-iphone-15-pro-settings-screen-time-family-sharing-content-restrictions-game-center.png",
+              "title": "Use parental controls on your child's iPhone or iPad - Apple ...",
+              "source_name": "Apple Support"
+            },
+            {
+              "source": "https://www.apple.com/newsroom/2025/09/apples-latest-tools-to-help-protect-kids-and-teens-online-now-available/?1757955572",
+              "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAIJv_TRsQ1lEqPYicmUD_FEc3i2au-5jNMY3oodzME5rMkwQ1wT_jkxg&s",
+              "original": "https://www.apple.com/newsroom/images/logos/quick-reads-logos/Apple-Child_Accounts.jpg.square_social.jpg",
+              "title": "Apple's latest tools to help protect kids and teens online ...",
+              "source_name": "Apple"
+            }
+          ],
+          "inline_videos": [
+            {
+              "position": 1,
+              "title": "Apple is expanding its tools to help parents protect their kids ...",
+              "link": "https://www.facebook.com/CBSMornings/videos/apple-is-expanding-its-tools-to-help-parents-protect-their-kids-online/602419886220415/",
+              "thumbnail": "https://serpapi.com/searches/68c9347b5c930130e90b500d/images/27bbeb1b2909623975633acc47b881a68de018e17741fd7323034614990f0c7b.jpeg",
+              "channel": "CBS Mornings",
+              "duration": "0:31",
+              "platform": "Facebook"
+            },
+            {
+              "position": 2,
+              "title": "iPhone Parental Controls Made Easy (Step by Step Guide)",
+              "link": "https://www.youtube.com/watch?v=Smyo1c0_TB4",
+              "thumbnail": "https://serpapi.com/searches/68c9347b5c930130e90b500d/images/27bbeb1b290962398b8a437f5ed132739d38fd0b5db15a89dd7e54e4f00f75d2.jpeg",
+              "channel": "Mummy of Four UK - Rhiannan Morgan",
+              "duration": "21:22",
+              "platform": "YouTube"
+            },
+            {
+              "position": 3,
+              "title": "5 NEW iOS 18.5 Features - HUGE for Parents",
+              "link": "https://www.youtube.com/watch?v=dQXgyyETMtk",
+              "thumbnail": "https://serpapi.com/searches/68c9347b5c930130e90b500d/images/27bbeb1b29096239a4cb38e17312b1246c9c7d27a48e5beb00d9820f5530de3e.jpeg",
+              "channel": "Stephen Robles",
+              "duration": "6:57",
+              "platform": "YouTube"
+            }
+          ],
+          "organic_results": [
+            {
+              "position": 1,
+              "title": "Apple's latest tools to help protect kids and teens online ...",
+              "link": "https://www.apple.com/newsroom/2025/09/apples-latest-tools-to-help-protect-kids-and-teens-online-now-available/",
+              "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.apple.com/newsroom/2025/09/apples-latest-tools-to-help-protect-kids-and-teens-online-now-available/&ved=2ahUKEwjY5eGogt2PAxXokyYFHbViDEEQFnoECBwQAQ",
+              "displayed_link": "https://www.apple.com › newsroom › 2025/09 › apples-l...",
+              "favicon": "https://serpapi.com/searches/68c9347b5c930130e90b500d/images/3451447dead998e43ca75092730882b471d0d1d00125b283dc20ee05c936002e.png",
+              "date": "17 hours ago",
+              "snippet": "Updates to Communication Limits, which give parents the ability to remotely approve new contacts for their children when using Apple apps. These ...",
+              "snippet_highlighted_words": [
+                "Updates to Communication Limits"
+              ],
+              "missing": [
+                "launched"
+              ],
+              "must_include": {
+                "word": "launched",
+                "link": "https://www.google.com/search?num=6&sca_esv=8fb985a9e177f272&q=Apple+%22launched%22+new+features+across+its+devices+to+help+parents+protect+children+and+teens+online.&sa=X&ved=2ahUKEwjY5eGogt2PAxXokyYFHbViDEEQ5t4CegQIJhAB"
+              },
+              "source": "Apple"
+            },
+            {
+              "position": 2,
+              "title": "Apple expands tools to help parents protect kids and teens ...",
+              "link": "https://www.apple.com/newsroom/2025/06/apple-expands-tools-to-help-parents-protect-kids-and-teens-online/",
+              "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.apple.com/newsroom/2025/06/apple-expands-tools-to-help-parents-protect-kids-and-teens-online/&ved=2ahUKEwjY5eGogt2PAxXokyYFHbViDEEQFnoECCMQAQ",
+              "displayed_link": "https://www.apple.com › newsroom › 2025/06 › apple-e...",
+              "favicon": "https://serpapi.com/searches/68c9347b5c930130e90b500d/images/3451447dead998e43ca75092730882b406c9483940f7dcd771aa72447a81bd14.png",
+              "date": "Jun 11, 2025",
+              "snippet": "Apple expands tools to help parents protect kids and teens online · Managing Child Accounts Becomes Simpler · Sharing a Kid's Age Range with Apps.",
+              "snippet_highlighted_words": [
+                "Apple expands tools to help parents protect kids and teens online"
+              ],
+              "source": "Apple"
+            },
+            {
+              "position": 3,
+              "title": "Apple expands tools to help parents protect kids and teens ...",
+              "link": "https://www.reddit.com/r/apple/comments/1l8xa0v/apple_expands_tools_to_help_parents_protect_kids/",
+              "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.reddit.com/r/apple/comments/1l8xa0v/apple_expands_tools_to_help_parents_protect_kids/&ved=2ahUKEwjY5eGogt2PAxXokyYFHbViDEEQFnoECB4QAQ",
+              "displayed_link": "10+ comments · 3 months ago",
+              "favicon": "https://serpapi.com/searches/68c9347b5c930130e90b500d/images/3451447dead998e43ca75092730882b40f98cb37719e65507b195661681d7c36.png",
+              "snippet": "The updated policy lets you refund a product up to 30 days after purchase, even if it was downloaded, launched, and played.",
+              "snippet_highlighted_words": [
+                "launched"
+              ],
+              "source": "Reddit · r/apple"
+            },
+            {
+              "position": 4,
+              "title": "Families",
+              "link": "https://www.apple.com/families/",
+              "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.apple.com/families/&ved=2ahUKEwjY5eGogt2PAxXokyYFHbViDEEQFnoECBsQAQ",
+              "displayed_link": "https://www.apple.com › families",
+              "favicon": "https://serpapi.com/searches/68c9347b5c930130e90b500d/images/3451447dead998e43ca75092730882b45f57ba1ba8cb5b978705a9a25229491f.png",
+              "snippet": "We're continually designing new features and parental controls to help make sure children use their devices in the ways their parents want them to.",
+              "snippet_highlighted_words": [
+                "new features and parental controls"
+              ],
+              "sitelinks": {
+                "inline": [
+                  {
+                    "title": "Apple (CA)",
+                    "link": "https://www.apple.com/ca/families/"
+                  },
+                  {
+                    "title": "Apple (AM)",
+                    "link": "https://www.apple.com/am/families/"
+                  },
+                  {
+                    "title": "Apple (PH)",
+                    "link": "https://www.apple.com/ph/families/"
+                  },
+                  {
+                    "title": "Apple (AZ)",
+                    "link": "https://www.apple.com/az/families/"
+                  }
+                ]
+              },
+              "source": "Apple"
+            },
+            {
+              "position": 5,
+              "title": "Apple Launches 'Age Assurance' Tech As US States Mull ...",
+              "link": "https://tech.slashdot.org/story/25/02/28/0046233/apple-launches-age-assurance-tech-as-us-states-mull-social-media-laws",
+              "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://tech.slashdot.org/story/25/02/28/0046233/apple-launches-age-assurance-tech-as-us-states-mull-social-media-laws&ved=2ahUKEwjY5eGogt2PAxXokyYFHbViDEEQFnoECDMQAQ",
+              "displayed_link": "https://tech.slashdot.org › story › apple-launches-age-as...",
+              "favicon": "https://serpapi.com/searches/68c9347b5c930130e90b500d/images/3451447dead998e43ca75092730882b404cc4509d2c27d9443cc47bf547a69bf.jpeg",
+              "date": "Feb 27, 2025",
+              "snippet": "Apple announced a new feature allowing parents to share a child's age with app developers without exposing sensitive information, ...",
+              "snippet_highlighted_words": [
+                "Apple",
+                "new feature",
+                "parents",
+                "child's"
+              ],
+              "source": "Slashdot"
+            }
+          ],
+          "top_stories": [
+            {
+              "title": "Apple’s latest tools to help protect kids and teens online now available",
+              "link": "https://www.apple.com/newsroom/2025/09/apples-latest-tools-to-help-protect-kids-and-teens-online-now-available/",
+              "source": "Apple",
+              "source_logo": "https://serpapi.com/searches/68c9347b5c930130e90b500d/images/6a1716a751da3b0b33bc4dff1761f8c90e75ab9faad3e71656dc71f30c15b1b5.png",
+              "date": "17 hours ago",
+              "thumbnail": "https://serpapi.com/searches/68c9347b5c930130e90b500d/images/6a1716a751da3b0be18c129d01d2499f8c319f7211f3bf71.jpeg"
+            },
+            {
+              "title": "Apple updates parental controls for kids and teens",
+              "link": "https://appleinsider.com/articles/25/09/15/apple-adds-new-tools-to-help-parents-manage-kids-device-use-and-app-access",
+              "source": "AppleInsider",
+              "source_logo": "https://serpapi.com/searches/68c9347b5c930130e90b500d/images/6a1716a751da3b0b57ea668391e04ca8d93af6c820779a2865a6c61b90765de0.png",
+              "date": "16 hours ago",
+              "thumbnail": "https://serpapi.com/searches/68c9347b5c930130e90b500d/images/6a1716a751da3b0b0e3b6667ba3ad9611a13fdc5f1fdb051.png"
+            }
+          ],
+          "top_stories_link": "https://www.google.com/search?num=6&sca_esv=8fb985a9e177f272&q=Apple+launched+new+features+across+its+devices+to+help+parents+protect+children+and+teens+online.&tbm=nws&source=univ&tbo=u&sa=X&ved=2ahUKEwjY5eGogt2PAxXokyYFHbViDEEQt8YBKAF6BAgXEAM",
+          "top_stories_serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&num=6&q=Apple+launched+new+features+across+its+devices+to+help+parents+protect+children+and+teens+online.&tbm=nws",
+          "discussions_and_forums": [
+            {
+              "title": "Apple makes Child Accounts in iOS 26 safer with new management tools",
+              "link": "https://forums.appleinsider.com/discussion/240626/apple-makes-child-accounts-in-ios-26-safer-with-new-management-tools",
+              "date": "3 months ago",
+              "source": "AppleInsider Forums",
+              "answers": [
+                {
+                  "snippet": "Apple says it is expanding the tools it offers to parents to manage a child's access to apps and services. This starts with simplifying Child ...",
+                  "link": "https://forums.appleinsider.com/discussion/240626/apple-makes-child-accounts-in-ios-26-safer-with-new-management-tools"
+                }
+              ]
+            },
+            {
+              "title": "Apple Overhauls Child Account Setup and Adds New Age Assurance ...",
+              "link": "https://forums.macrumors.com/threads/apple-overhauls-child-account-setup-and-adds-new-age-assurance-features.2450308/",
+              "date": "6 months ago",
+              "source": "MacRumors Forums",
+              "answers": [
+                {
+                  "snippet": "Apple today said that it is implementing new features that are designed to make children safer online, including an updated age rating ...",
+                  "link": "https://forums.macrumors.com/threads/apple-overhauls-child-account-setup-and-adds-new-age-assurance-features.2450308/"
+                }
+              ]
+            },
+            {
+              "title": "Here's why Apple's new child safety features are so controversial",
+              "link": "https://www.reddit.com/r/apple/comments/p20csi/heres_why_apples_new_child_safety_features_are_so/",
+              "date": "4 years ago",
+              "extensions": [
+                "r/apple",
+                "90+ comments"
+              ],
+              "source": "Reddit",
+              "answers": [
+                {
+                  "snippet": "r/privacy - After a year in limbo, Apple quietly kills its controversial CSAM. macworld. 1.9K upvotes · ...",
+                  "link": "https://www.reddit.com/r/apple/comments/p20csi/heres_why_apples_new_child_safety_features_are_so/"
+                }
+              ]
+            }
+          ],
+          "pagination": {
+            "current": 1,
+            "next": "https://www.google.com/search?q=Apple+launched+new+features+across+its+devices+to+help+parents+protect+children+and+teens+online.&num=6&sca_esv=8fb985a9e177f272&ei=ezTJaJi8OuinmtkPtcWxiAQ&start=6&sa=N&sstk=Ac65TH6LJ8XmxtmhSRoMpGKzgp-7iV7nNOxmZD9Dm51k8SCg681sKMuR5b9Dfb9Y0Fbzrt0Qb7cpCCIZB3rMOIaH0GwNoQa4vudOCA&ved=2ahUKEwjY5eGogt2PAxXokyYFHbViDEEQ8NMDegQIDRAW",
+            "other_pages": {
+              "2": "https://www.google.com/search?q=Apple+launched+new+features+across+its+devices+to+help+parents+protect+children+and+teens+online.&num=6&sca_esv=8fb985a9e177f272&ei=ezTJaJi8OuinmtkPtcWxiAQ&start=6&sa=N&sstk=Ac65TH6LJ8XmxtmhSRoMpGKzgp-7iV7nNOxmZD9Dm51k8SCg681sKMuR5b9Dfb9Y0Fbzrt0Qb7cpCCIZB3rMOIaH0GwNoQa4vudOCA&ved=2ahUKEwjY5eGogt2PAxXokyYFHbViDEEQ8tMDegQIDRAE",
+              "3": "https://www.google.com/search?q=Apple+launched+new+features+across+its+devices+to+help+parents+protect+children+and+teens+online.&num=6&sca_esv=8fb985a9e177f272&ei=ezTJaJi8OuinmtkPtcWxiAQ&start=12&sa=N&sstk=Ac65TH6LJ8XmxtmhSRoMpGKzgp-7iV7nNOxmZD9Dm51k8SCg681sKMuR5b9Dfb9Y0Fbzrt0Qb7cpCCIZB3rMOIaH0GwNoQa4vudOCA&ved=2ahUKEwjY5eGogt2PAxXokyYFHbViDEEQ8tMDegQIDRAG",
+              "4": "https://www.google.com/search?q=Apple+launched+new+features+across+its+devices+to+help+parents+protect+children+and+teens+online.&num=6&sca_esv=8fb985a9e177f272&ei=ezTJaJi8OuinmtkPtcWxiAQ&start=18&sa=N&sstk=Ac65TH6LJ8XmxtmhSRoMpGKzgp-7iV7nNOxmZD9Dm51k8SCg681sKMuR5b9Dfb9Y0Fbzrt0Qb7cpCCIZB3rMOIaH0GwNoQa4vudOCA&ved=2ahUKEwjY5eGogt2PAxXokyYFHbViDEEQ8tMDegQIDRAI",
+              "5": "https://www.google.com/search?q=Apple+launched+new+features+across+its+devices+to+help+parents+protect+children+and+teens+online.&num=6&sca_esv=8fb985a9e177f272&ei=ezTJaJi8OuinmtkPtcWxiAQ&start=24&sa=N&sstk=Ac65TH6LJ8XmxtmhSRoMpGKzgp-7iV7nNOxmZD9Dm51k8SCg681sKMuR5b9Dfb9Y0Fbzrt0Qb7cpCCIZB3rMOIaH0GwNoQa4vudOCA&ved=2ahUKEwjY5eGogt2PAxXokyYFHbViDEEQ8tMDegQIDRAK",
+              "6": "https://www.google.com/search?q=Apple+launched+new+features+across+its+devices+to+help+parents+protect+children+and+teens+online.&num=6&sca_esv=8fb985a9e177f272&ei=ezTJaJi8OuinmtkPtcWxiAQ&start=30&sa=N&sstk=Ac65TH6LJ8XmxtmhSRoMpGKzgp-7iV7nNOxmZD9Dm51k8SCg681sKMuR5b9Dfb9Y0Fbzrt0Qb7cpCCIZB3rMOIaH0GwNoQa4vudOCA&ved=2ahUKEwjY5eGogt2PAxXokyYFHbViDEEQ8tMDegQIDRAM",
+              "7": "https://www.google.com/search?q=Apple+launched+new+features+across+its+devices+to+help+parents+protect+children+and+teens+online.&num=6&sca_esv=8fb985a9e177f272&ei=ezTJaJi8OuinmtkPtcWxiAQ&start=36&sa=N&sstk=Ac65TH6LJ8XmxtmhSRoMpGKzgp-7iV7nNOxmZD9Dm51k8SCg681sKMuR5b9Dfb9Y0Fbzrt0Qb7cpCCIZB3rMOIaH0GwNoQa4vudOCA&ved=2ahUKEwjY5eGogt2PAxXokyYFHbViDEEQ8tMDegQIDRAO",
+              "8": "https://www.google.com/search?q=Apple+launched+new+features+across+its+devices+to+help+parents+protect+children+and+teens+online.&num=6&sca_esv=8fb985a9e177f272&ei=ezTJaJi8OuinmtkPtcWxiAQ&start=42&sa=N&sstk=Ac65TH6LJ8XmxtmhSRoMpGKzgp-7iV7nNOxmZD9Dm51k8SCg681sKMuR5b9Dfb9Y0Fbzrt0Qb7cpCCIZB3rMOIaH0GwNoQa4vudOCA&ved=2ahUKEwjY5eGogt2PAxXokyYFHbViDEEQ8tMDegQIDRAQ",
+              "9": "https://www.google.com/search?q=Apple+launched+new+features+across+its+devices+to+help+parents+protect+children+and+teens+online.&num=6&sca_esv=8fb985a9e177f272&ei=ezTJaJi8OuinmtkPtcWxiAQ&start=48&sa=N&sstk=Ac65TH6LJ8XmxtmhSRoMpGKzgp-7iV7nNOxmZD9Dm51k8SCg681sKMuR5b9Dfb9Y0Fbzrt0Qb7cpCCIZB3rMOIaH0GwNoQa4vudOCA&ved=2ahUKEwjY5eGogt2PAxXokyYFHbViDEEQ8tMDegQIDRAS",
+              "10": "https://www.google.com/search?q=Apple+launched+new+features+across+its+devices+to+help+parents+protect+children+and+teens+online.&num=6&sca_esv=8fb985a9e177f272&ei=ezTJaJi8OuinmtkPtcWxiAQ&start=54&sa=N&sstk=Ac65TH6LJ8XmxtmhSRoMpGKzgp-7iV7nNOxmZD9Dm51k8SCg681sKMuR5b9Dfb9Y0Fbzrt0Qb7cpCCIZB3rMOIaH0GwNoQa4vudOCA&ved=2ahUKEwjY5eGogt2PAxXokyYFHbViDEEQ8tMDegQIDRAU"
+            }
+          },
+          "serpapi_pagination": {
+            "current": 1,
+            "next_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&num=6&q=Apple+launched+new+features+across+its+devices+to+help+parents+protect+children+and+teens+online.&start=6",
+            "next": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&num=6&q=Apple+launched+new+features+across+its+devices+to+help+parents+protect+children+and+teens+online.&start=6",
+            "other_pages": {
+              "2": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&num=6&q=Apple+launched+new+features+across+its+devices+to+help+parents+protect+children+and+teens+online.&start=6",
+              "3": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&num=6&q=Apple+launched+new+features+across+its+devices+to+help+parents+protect+children+and+teens+online.&start=12",
+              "4": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&num=6&q=Apple+launched+new+features+across+its+devices+to+help+parents+protect+children+and+teens+online.&start=18",
+              "5": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&num=6&q=Apple+launched+new+features+across+its+devices+to+help+parents+protect+children+and+teens+online.&start=24",
+              "6": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&num=6&q=Apple+launched+new+features+across+its+devices+to+help+parents+protect+children+and+teens+online.&start=30",
+              "7": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&num=6&q=Apple+launched+new+features+across+its+devices+to+help+parents+protect+children+and+teens+online.&start=36",
+              "8": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&num=6&q=Apple+launched+new+features+across+its+devices+to+help+parents+protect+children+and+teens+online.&start=42",
+              "9": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&num=6&q=Apple+launched+new+features+across+its+devices+to+help+parents+protect+children+and+teens+online.&start=48",
+              "10": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&num=6&q=Apple+launched+new+features+across+its+devices+to+help+parents+protect+children+and+teens+online.&start=54"
+            }
+          }
+        }
+      },
+      "evidence_agg": {
+        "evidence": [
+          {
+            "title": "Apple's latest tools to help protect kids and teens online ...",
+            "snippet": "Updates to Communication Limits, which give parents the ability to remotely approve new contacts for their children when using Apple apps. These ...",
+            "link": "https://www.apple.com/newsroom/2025/09/apples-latest-tools-to-help-protect-kids-and-teens-online-now-available/",
+            "domain": "apple.com",
+            "trust": 0.6
+          },
+          {
+            "title": "Apple expands tools to help parents protect kids and teens ...",
+            "snippet": "Apple expands tools to help parents protect kids and teens online · Managing Child Accounts Becomes Simpler · Sharing a Kid's Age Range with Apps.",
+            "link": "https://www.apple.com/newsroom/2025/06/apple-expands-tools-to-help-parents-protect-kids-and-teens-online/",
+            "domain": "apple.com",
+            "trust": 0.6
+          },
+          {
+            "title": "Apple expands tools to help parents protect kids and teens ...",
+            "snippet": "The updated policy lets you refund a product up to 30 days after purchase, even if it was downloaded, launched, and played.",
+            "link": "https://www.reddit.com/r/apple/comments/1l8xa0v/apple_expands_tools_to_help_parents_protect_kids/",
+            "domain": "reddit.com",
+            "trust": 0.6
+          },
+          {
+            "title": "Families",
+            "snippet": "We're continually designing new features and parental controls to help make sure children use their devices in the ways their parents want them to.",
+            "link": "https://www.apple.com/families/",
+            "domain": "apple.com",
+            "trust": 0.6
+          },
+          {
+            "title": "Apple Launches 'Age Assurance' Tech As US States Mull ...",
+            "snippet": "Apple announced a new feature allowing parents to share a child's age with app developers without exposing sensitive information, ...",
+            "link": "https://tech.slashdot.org/story/25/02/28/0046233/apple-launches-age-assurance-tech-as-us-states-mull-social-media-laws",
+            "domain": "tech.slashdot.org",
+            "trust": 0.6
+          }
+        ],
+        "consensus": {
+          "contradicts_claim": false,
+          "top_trust_avg": 0.6,
+          "top_domains": {
+            "apple.com": 3,
+            "reddit.com": 1,
+            "tech.slashdot.org": 1
+          }
+        },
+        "raw_snippets": "Apple's latest tools to help protect kids and teens online ... Updates to Communication Limits, which give parents the ability to remotely approve new contacts for their children when using Apple apps. These ... Apple expands tools to help parents protect kids and teens ... Apple expands tools to help parents protect kids and teens online · Managing Child Accounts Becomes Simpler · Sharing a Kid's Age Range with Apps. Apple expands tools to help parents protect kids and teens ... The updated policy lets you refund a product up to 30 days after purchase, even if it was downloaded, launched, and played. Families We're continually designing new features and parental controls to help make sure children use their devices in the ways their parents want them to. Apple Launches 'Age Assurance' Tech As US States Mull ... Apple announced a new feature allowing parents to share a child's age with app developers without exposing sensitive information, ..."
+      },
+      "phishing_analysis": null,
+      "final_verdict": "True",
+      "confidence": 0.76,
+      "reasons": [
+        "Aggregated signals indicate likely truth",
+        {
+          "type": "Irrelevant Information",
+          "description": "One piece of evidence from Reddit, while mentioning 'Apple expands tools to help parents protect kids and teens,' then discusses an updated refund policy, which is not relevant to features for online child protection."
+        },
+        "Gemini note: Multiple sources, including Apple's official Newsroom, confirm that Apple has launched or expanded new features across its devices designed to help parents protect children and teens online. These features include updates to Communication L"
+      ],
+      "final_score": 0.6,
+      "trust_score_pct": 80,
+      "qa_summary": "Q1: Why did we reach this verdict?\nA: Aggregated signals indicate likely truth; {\"type\": \"Irrelevant Information\", \"description\": \"One piece of evidence from Reddit, while mentioning 'Apple expands tools to help parents protect kids and teens,' then discusses an updated refund policy, which is not relevant to features for online child protection.\"}; Gemini note: Multiple sources, including Apple's official Newsroom, confirm that Apple has launched or expanded new features across its devices designed to help parents protect children and teens online. These features include updates to Communication L\n\nQ2: How was it verified?\nA: Verified by:\n- Top web references (up to 3):\n- apple.com: Apple's latest tools to help protect kids and teens online ... (https://www.apple.com/newsroom/2025/09/apples-latest-tools-to-help-protect-kids-and-teens-online-now-available/)\n- apple.com: Apple expands tools to help parents protect kids and teens ... (https://www.apple.com/newsroom/2025/06/apple-expands-tools-to-help-parents-protect-kids-and-teens-online/)\n- reddit.com: Apple expands tools to help parents protect kids and teens ... (https://www.reddit.com/r/apple/comments/1l8xa0v/apple_expands_tools_to_help_parents_protect_kids/)\n- Automated checks: Gemini model analysis\n\nQ3: What should you do next?\nA: - Read the listed sources for full context and check publication dates. - Cross-check with official channels (government, company, or primary source).",
+      "phishing_tag": "Unknown"
+    },
+    {
+      "claim": "Apple's new online safety tools include enhanced communication safety features.",
+      "context": "Apple Introduces New Online Safety Tools for Youth Apple has launched new features across its devices to help parents protect children and teens online. These tools include enhanced communication safety and expanded parental controls.",
+      "image_analysis": null,
+      "hf_classifier": {
+        "error": "hf-unavailable"
+      },
+      "gemini_verdict": {
+        "verdict": "True",
+        "overall": "The evidence strongly supports the claim that Apple's new online safety tools include enhanced communication safety features. Multiple sources from Apple's newsroom and other reputable outlets detail specific communication safety enhancements, such as expanded nudity detection in FaceTime and Shared Albums, and new parental controls for approving contacts in Apple apps and for texting new numbers.",
+        "issues": [],
+        "citations": [
+          {
+            "source": "Apple's latest tools to help protect kids and teens online ...",
+            "snippet": "Updates to Communication Limits, which give parents the ability to remotely approve new contacts for their children when using Apple apps.",
+            "url": "https://www.apple.com/newsroom/2025/09/apples-latest-tools-to-help-protect-kids-and-teens-online-now-available/"
+          },
+          {
+            "source": "Apple expands tools to help parents protect kids and teens ...",
+            "snippet": "Communication Safety expands to intervene when nudity is detected in FaceTime video calls, and to blur out nudity in Shared Albums in Photos.",
+            "url": "https://www.apple.com/newsroom/2025/06/apple-expands-tools-to-help-parents-protect-kids-and-teens-online/"
+          },
+          {
+            "source": "Apple's latest online safety tools: What parents need to know",
+            "snippet": "These protections include Communication Safety features and web filters, all powered by enhanced age categorisation in the App Store.",
+            "url": "https://gulfbusiness.com/apples-latest-online-safety-tools-what-parents-need-to-know/"
+          },
+          {
+            "source": "New phone safety features can help kids",
+            "snippet": "Apple's new update requires kids to get parents' permission to text new numbers; Android phones have similar protections.",
+            "url": "https://www.deseret.com/family/2025/07/06/new-apple-update-safety-feature-helps-parents-teens/"
+          }
+        ]
+      },
+      "serpapi_result": {
+        "available": true,
+        "result": {
+          "search_metadata": {
+            "id": "68c9348eeeabd3eeeb5ca754",
+            "status": "Success",
+            "json_endpoint": "https://serpapi.com/searches/ff2e8106751a7a2a/68c9348eeeabd3eeeb5ca754.json",
+            "pixel_position_endpoint": "https://serpapi.com/searches/ff2e8106751a7a2a/68c9348eeeabd3eeeb5ca754.json_with_pixel_position",
+            "created_at": "2025-09-16 09:57:34 UTC",
+            "processed_at": "2025-09-16 09:57:34 UTC",
+            "google_url": "https://www.google.com/search?q=Apple%27s+new+online+safety+tools+include+enhanced+communication+safety+features.&oq=Apple%27s+new+online+safety+tools+include+enhanced+communication+safety+features.&num=6&sourceid=chrome&ie=UTF-8",
+            "raw_html_file": "https://serpapi.com/searches/ff2e8106751a7a2a/68c9348eeeabd3eeeb5ca754.html",
+            "total_time_taken": 1.26
+          },
+          "search_parameters": {
+            "engine": "google",
+            "q": "Apple's new online safety tools include enhanced communication safety features.",
+            "google_domain": "google.com",
+            "num": "6",
+            "device": "desktop"
+          },
+          "search_information": {
+            "query_displayed": "Apple's new online safety tools include enhanced communication safety features.",
+            "total_results": 66700000,
+            "time_taken_displayed": 0.49,
+            "organic_results_state": "Results for exact spelling"
+          },
+          "short_videos": [
+            {
+              "position": 1,
+              "title": "Apple's New Communication Safety Feature for Parents to Set",
+              "source": "YouTube",
+              "profile_name": "TWiT Tech Podcast Network",
+              "extensions": [
+                "TWiT Tech Podcast Network"
+              ],
+              "source_logo": "https://serpapi.com/searches/68c9348eeeabd3eeeb5ca754/images/fd382e1614241ef7c849587b9113f9e897348c601e048e0a0ad78c0046a946a4.png",
+              "date": "Jul 17, 2025",
+              "thumbnail": "https://serpapi.com/searches/68c9348eeeabd3eeeb5ca754/images/fd382e1614241ef764831d91bbf03e71a28de5db14331c0f809452364b70daaa.jpeg",
+              "link": "https://www.youtube.com/shorts/TWyxcg3vP44"
+            },
+            {
+              "position": 2,
+              "title": "Apple's New Communication Safety Feature Explained by twittok on TikTok. Play on TikTok.",
+              "source": "TikTok",
+              "profile_name": "twittok",
+              "extensions": [
+                "twittok"
+              ],
+              "source_logo": "https://serpapi.com/searches/68c9348eeeabd3eeeb5ca754/images/fd382e1614241ef7d4ea2b9a823deac2eef363f67de0071813772a75a7527c74.png",
+              "thumbnail": "https://serpapi.com/searches/68c9348eeeabd3eeeb5ca754/images/fd382e1614241ef77cfb089992d5777bcb3928d1cbcefed7b7b8aac90c9f7ae8.jpeg",
+              "link": "https://www.tiktok.com/@twittok/video/7528110918706662711"
+            },
+            {
+              "position": 3,
+              "title": "Apple is expanding its tools to help parents protect their kids ... by CBS Mornings on Facebook. Play on Facebook.",
+              "source": "Facebook",
+              "profile_name": "CBS Mornings",
+              "extensions": [
+                "CBS Mornings"
+              ],
+              "source_logo": "https://serpapi.com/searches/68c9348eeeabd3eeeb5ca754/images/fd382e1614241ef73e07888acae058b6efa719b3f591b5f63da031fec17d83d3.png",
+              "thumbnail": "https://serpapi.com/searches/68c9348eeeabd3eeeb5ca754/images/fd382e1614241ef7676d1612542946d21d729592c3d66d755ed390dbc17538e7.jpeg",
+              "link": "https://www.facebook.com/CBSMornings/videos/apple-is-expanding-its-tools-to-help-parents-protect-their-kids-online/602419886220415/"
+            },
+            {
+              "position": 4,
+              "title": "Enable Communication Safety on Your Child's iPhone by dnay1.0 on TikTok. Play on TikTok.",
+              "source": "TikTok",
+              "profile_name": "dnay1.0",
+              "extensions": [
+                "dnay1.0"
+              ],
+              "source_logo": "https://serpapi.com/searches/68c9348eeeabd3eeeb5ca754/images/fd382e1614241ef7649aef7232479728879c56ce0d5430d661c14abf2f4b4acf.png",
+              "thumbnail": "https://serpapi.com/searches/68c9348eeeabd3eeeb5ca754/images/fd382e1614241ef798ed9403f51a31445d5b2b790819231ae0a4699787a6caf7.jpeg",
+              "link": "https://www.tiktok.com/@dnay1.0/video/7364634968666033438"
+            },
+            {
+              "position": 5,
+              "title": "Apple expands parental protection tools #shorts",
+              "source": "YouTube",
+              "profile_name": "CBS Mornings",
+              "extensions": [
+                "CBS Mornings"
+              ],
+              "source_logo": "https://serpapi.com/searches/68c9348eeeabd3eeeb5ca754/images/fd382e1614241ef78b9a60264201a954327298ce81864df8deb6fe6a297d6705.png",
+              "date": "Jun 13, 2025",
+              "thumbnail": "https://serpapi.com/searches/68c9348eeeabd3eeeb5ca754/images/fd382e1614241ef791d357b46f9a59714cc0bfa987ebf7cecb377f5b9beb88bc.jpeg",
+              "link": "https://www.youtube.com/shorts/h5cLfmXK0nE"
+            },
+            {
+              "position": 6,
+              "title": "Have you heard of Apple’s newest safety setting? It helps ... by defendyoungminds on Instagram. Play on Instagram.",
+              "source": "Instagram",
+              "profile_name": "defendyoungminds",
+              "extensions": [
+                "defendyoungminds"
+              ],
+              "source_logo": "https://serpapi.com/searches/68c9348eeeabd3eeeb5ca754/images/fd382e1614241ef716a10688381e2ce3100cd08bf10c689767ec4aefb3b5a553.png",
+              "thumbnail": "https://serpapi.com/searches/68c9348eeeabd3eeeb5ca754/images/fd382e1614241ef704f835c4895bcd60a9a1f1b4927acbcb2fca3d94cb930edc.jpeg",
+              "link": "https://www.instagram.com/reel/CyBNX51uGZP/"
+            }
+          ],
+          "organic_results": [
+            {
+              "position": 1,
+              "title": "Apple's latest tools to help protect kids and teens online ...",
+              "link": "https://www.apple.com/newsroom/2025/09/apples-latest-tools-to-help-protect-kids-and-teens-online-now-available/",
+              "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.apple.com/newsroom/2025/09/apples-latest-tools-to-help-protect-kids-and-teens-online-now-available/&ved=2ahUKEwj5z9Gxgt2PAxXLK1kFHXqyMAkQFnoECCQQAQ",
+              "displayed_link": "https://www.apple.com › newsroom › 2025/09 › apples-l...",
+              "favicon": "https://serpapi.com/searches/68c9348eeeabd3eeeb5ca754/images/548f0533e8bd055bff918153b4208187f143ac4d3b9762c93fa91bb95d4417dc.png",
+              "date": "17 hours ago",
+              "snippet": "Updates to Communication Limits, which give parents the ability to remotely approve new contacts for their children when using Apple apps. These ...",
+              "snippet_highlighted_words": [
+                "Communication",
+                "new",
+                "Apple"
+              ],
+              "missing": [
+                "enhanced"
+              ],
+              "must_include": {
+                "word": "enhanced",
+                "link": "https://www.google.com/search?num=6&sca_esv=8fb985a9e177f272&q=Apple's+new+online+safety+tools+include+%22enhanced%22+communication+safety+features.&sa=X&ved=2ahUKEwj5z9Gxgt2PAxXLK1kFHXqyMAkQ5t4CegQIKxAB"
+              },
+              "source": "Apple"
+            },
+            {
+              "position": 2,
+              "title": "Apple expands tools to help parents protect kids and teens ...",
+              "link": "https://www.apple.com/newsroom/2025/06/apple-expands-tools-to-help-parents-protect-kids-and-teens-online/",
+              "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.apple.com/newsroom/2025/06/apple-expands-tools-to-help-parents-protect-kids-and-teens-online/&ved=2ahUKEwj5z9Gxgt2PAxXLK1kFHXqyMAkQFnoECCIQAQ",
+              "displayed_link": "https://www.apple.com › newsroom › 2025/06 › apple-e...",
+              "favicon": "https://serpapi.com/searches/68c9348eeeabd3eeeb5ca754/images/548f0533e8bd055bff918153b4208187f59e057f56bd4ae5bb0784482c12b080.png",
+              "date": "Jun 11, 2025",
+              "snippet": "Communication Safety expands to intervene when nudity is detected in FaceTime video calls, and to blur out nudity in Shared Albums in Photos.",
+              "snippet_highlighted_words": [
+                "Communication Safety expands"
+              ],
+              "source": "Apple"
+            },
+            {
+              "position": 3,
+              "title": "Apple's latest online safety tools: What parents need to know",
+              "link": "https://gulfbusiness.com/apples-latest-online-safety-tools-what-parents-need-to-know/",
+              "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://gulfbusiness.com/apples-latest-online-safety-tools-what-parents-need-to-know/&ved=2ahUKEwj5z9Gxgt2PAxXLK1kFHXqyMAkQFnoECCMQAQ",
+              "displayed_link": "https://gulfbusiness.com › apples-latest-online-safety-to...",
+              "favicon": "https://serpapi.com/searches/68c9348eeeabd3eeeb5ca754/images/548f0533e8bd055bff918153b42081875799bb9f56d88cd759e4411889db297d.png",
+              "date": "Jun 19, 2025",
+              "snippet": "These protections include Communication Safety features and web filters, all powered by enhanced age categorisation in the App Store. These ...",
+              "snippet_highlighted_words": [
+                "Communication Safety features"
+              ],
+              "source": "Gulf Business"
+            },
+            {
+              "position": 4,
+              "title": "New phone safety features can help kids",
+              "link": "https://www.deseret.com/family/2025/07/06/new-apple-update-safety-feature-helps-parents-teens/",
+              "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.deseret.com/family/2025/07/06/new-apple-update-safety-feature-helps-parents-teens/&ved=2ahUKEwj5z9Gxgt2PAxXLK1kFHXqyMAkQFnoECC0QAQ",
+              "displayed_link": "https://www.deseret.com › family › 2025/07/06 › new-...",
+              "favicon": "https://serpapi.com/searches/68c9348eeeabd3eeeb5ca754/images/548f0533e8bd055bff918153b4208187cc9e0c7229608a3c55c2191884851138.png",
+              "date": "Jul 6, 2025",
+              "snippet": "Apple's new update requires kids to get parents' permission to text new numbers; Android phones have similar protections.",
+              "snippet_highlighted_words": [
+                "Apple's new",
+                "new",
+                "have"
+              ],
+              "source": "Deseret News"
+            }
+          ],
+          "top_stories": [
+            {
+              "title": "Apple Rolls Out New Online Safety Tools for Kids and Teens with IOS 26",
+              "link": "https://www.mix1049.com.au/trending/technology/apple-rolls-out-new-online-safety-tools-for-kids-and-teens-with-ios-26/",
+              "source": "Mix 1049",
+              "source_logo": "https://serpapi.com/searches/68c9348eeeabd3eeeb5ca754/images/705d8d8855e7c9d2ad6f4c3a69e4b244ca5954e108ac119bef812c86423ff471.png",
+              "date": "4 hours ago",
+              "thumbnail": "https://serpapi.com/searches/68c9348eeeabd3eeeb5ca754/images/705d8d8855e7c9d2e6606e8ce5ff55bdbc57858d084052a8.jpeg"
+            },
+            {
+              "title": "Apple Introduces AI-Driven Safety Tools in iOS 26 for Child Protection",
+              "link": "https://www.webpronews.com/apple-introduces-ai-driven-safety-tools-in-ios-26-for-child-protection/",
+              "source": "WebProNews",
+              "source_logo": "https://serpapi.com/searches/68c9348eeeabd3eeeb5ca754/images/705d8d8855e7c9d2ca13b11fc246a899c34b2ba99d0d88d7322cdd71e1dec6cd.png",
+              "date": "14 hours ago",
+              "thumbnail": "https://serpapi.com/searches/68c9348eeeabd3eeeb5ca754/images/705d8d8855e7c9d231d9ad8900b223d7571837c5de0e1ff4.jpeg"
+            },
+            {
+              "title": "Apple’s latest tools to help protect kids and teens online now available",
+              "link": "https://www.apple.com/newsroom/2025/09/apples-latest-tools-to-help-protect-kids-and-teens-online-now-available/",
+              "source": "Apple",
+              "source_logo": "https://serpapi.com/searches/68c9348eeeabd3eeeb5ca754/images/705d8d8855e7c9d22454feb56b53b9dc182e0302339efca63135bc72438755c3.png",
+              "date": "17 hours ago",
+              "thumbnail": "https://serpapi.com/searches/68c9348eeeabd3eeeb5ca754/images/705d8d8855e7c9d2154d0e73e5da6982a1ab341d17a8a5ef.jpeg"
+            }
+          ],
+          "top_stories_link": "https://www.google.com/search?num=6&sca_esv=8fb985a9e177f272&q=Apple%27s+new+online+safety+tools+include+enhanced+communication+safety+features.&tbm=nws&source=univ&tbo=u&sa=X&ved=2ahUKEwj5z9Gxgt2PAxXLK1kFHXqyMAkQt8YBKAF6BAgXEAM",
+          "top_stories_serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&num=6&q=Apple%27s+new+online+safety+tools+include+enhanced+communication+safety+features.&tbm=nws",
+          "pagination": {
+            "current": 1,
+            "next": "https://www.google.com/search?q=Apple's+new+online+safety+tools+include+enhanced+communication+safety+features.&num=6&sca_esv=8fb985a9e177f272&ei=jjTJaPnQIsvX5NoP-uTCSQ&start=6&sa=N&sstk=Ac65TH713QLKe9lApVccjeA8Ir9poMq7u4FilEztSUQkCJRdoOG1mcfsFEGjjVYoFU5MNBqM70noADY0bbGtrH60dpvaubt8GdQzaQ&ved=2ahUKEwj5z9Gxgt2PAxXLK1kFHXqyMAkQ8NMDegQIDBAW",
+            "other_pages": {
+              "2": "https://www.google.com/search?q=Apple's+new+online+safety+tools+include+enhanced+communication+safety+features.&num=6&sca_esv=8fb985a9e177f272&ei=jjTJaPnQIsvX5NoP-uTCSQ&start=6&sa=N&sstk=Ac65TH713QLKe9lApVccjeA8Ir9poMq7u4FilEztSUQkCJRdoOG1mcfsFEGjjVYoFU5MNBqM70noADY0bbGtrH60dpvaubt8GdQzaQ&ved=2ahUKEwj5z9Gxgt2PAxXLK1kFHXqyMAkQ8tMDegQIDBAE",
+              "3": "https://www.google.com/search?q=Apple's+new+online+safety+tools+include+enhanced+communication+safety+features.&num=6&sca_esv=8fb985a9e177f272&ei=jjTJaPnQIsvX5NoP-uTCSQ&start=12&sa=N&sstk=Ac65TH713QLKe9lApVccjeA8Ir9poMq7u4FilEztSUQkCJRdoOG1mcfsFEGjjVYoFU5MNBqM70noADY0bbGtrH60dpvaubt8GdQzaQ&ved=2ahUKEwj5z9Gxgt2PAxXLK1kFHXqyMAkQ8tMDegQIDBAG",
+              "4": "https://www.google.com/search?q=Apple's+new+online+safety+tools+include+enhanced+communication+safety+features.&num=6&sca_esv=8fb985a9e177f272&ei=jjTJaPnQIsvX5NoP-uTCSQ&start=18&sa=N&sstk=Ac65TH713QLKe9lApVccjeA8Ir9poMq7u4FilEztSUQkCJRdoOG1mcfsFEGjjVYoFU5MNBqM70noADY0bbGtrH60dpvaubt8GdQzaQ&ved=2ahUKEwj5z9Gxgt2PAxXLK1kFHXqyMAkQ8tMDegQIDBAI",
+              "5": "https://www.google.com/search?q=Apple's+new+online+safety+tools+include+enhanced+communication+safety+features.&num=6&sca_esv=8fb985a9e177f272&ei=jjTJaPnQIsvX5NoP-uTCSQ&start=24&sa=N&sstk=Ac65TH713QLKe9lApVccjeA8Ir9poMq7u4FilEztSUQkCJRdoOG1mcfsFEGjjVYoFU5MNBqM70noADY0bbGtrH60dpvaubt8GdQzaQ&ved=2ahUKEwj5z9Gxgt2PAxXLK1kFHXqyMAkQ8tMDegQIDBAK",
+              "6": "https://www.google.com/search?q=Apple's+new+online+safety+tools+include+enhanced+communication+safety+features.&num=6&sca_esv=8fb985a9e177f272&ei=jjTJaPnQIsvX5NoP-uTCSQ&start=30&sa=N&sstk=Ac65TH713QLKe9lApVccjeA8Ir9poMq7u4FilEztSUQkCJRdoOG1mcfsFEGjjVYoFU5MNBqM70noADY0bbGtrH60dpvaubt8GdQzaQ&ved=2ahUKEwj5z9Gxgt2PAxXLK1kFHXqyMAkQ8tMDegQIDBAM",
+              "7": "https://www.google.com/search?q=Apple's+new+online+safety+tools+include+enhanced+communication+safety+features.&num=6&sca_esv=8fb985a9e177f272&ei=jjTJaPnQIsvX5NoP-uTCSQ&start=36&sa=N&sstk=Ac65TH713QLKe9lApVccjeA8Ir9poMq7u4FilEztSUQkCJRdoOG1mcfsFEGjjVYoFU5MNBqM70noADY0bbGtrH60dpvaubt8GdQzaQ&ved=2ahUKEwj5z9Gxgt2PAxXLK1kFHXqyMAkQ8tMDegQIDBAO",
+              "8": "https://www.google.com/search?q=Apple's+new+online+safety+tools+include+enhanced+communication+safety+features.&num=6&sca_esv=8fb985a9e177f272&ei=jjTJaPnQIsvX5NoP-uTCSQ&start=42&sa=N&sstk=Ac65TH713QLKe9lApVccjeA8Ir9poMq7u4FilEztSUQkCJRdoOG1mcfsFEGjjVYoFU5MNBqM70noADY0bbGtrH60dpvaubt8GdQzaQ&ved=2ahUKEwj5z9Gxgt2PAxXLK1kFHXqyMAkQ8tMDegQIDBAQ",
+              "9": "https://www.google.com/search?q=Apple's+new+online+safety+tools+include+enhanced+communication+safety+features.&num=6&sca_esv=8fb985a9e177f272&ei=jjTJaPnQIsvX5NoP-uTCSQ&start=48&sa=N&sstk=Ac65TH713QLKe9lApVccjeA8Ir9poMq7u4FilEztSUQkCJRdoOG1mcfsFEGjjVYoFU5MNBqM70noADY0bbGtrH60dpvaubt8GdQzaQ&ved=2ahUKEwj5z9Gxgt2PAxXLK1kFHXqyMAkQ8tMDegQIDBAS",
+              "10": "https://www.google.com/search?q=Apple's+new+online+safety+tools+include+enhanced+communication+safety+features.&num=6&sca_esv=8fb985a9e177f272&ei=jjTJaPnQIsvX5NoP-uTCSQ&start=54&sa=N&sstk=Ac65TH713QLKe9lApVccjeA8Ir9poMq7u4FilEztSUQkCJRdoOG1mcfsFEGjjVYoFU5MNBqM70noADY0bbGtrH60dpvaubt8GdQzaQ&ved=2ahUKEwj5z9Gxgt2PAxXLK1kFHXqyMAkQ8tMDegQIDBAU"
+            }
+          },
+          "serpapi_pagination": {
+            "current": 1,
+            "next_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&num=6&q=Apple%27s+new+online+safety+tools+include+enhanced+communication+safety+features.&start=6",
+            "next": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&num=6&q=Apple%27s+new+online+safety+tools+include+enhanced+communication+safety+features.&start=6",
+            "other_pages": {
+              "2": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&num=6&q=Apple%27s+new+online+safety+tools+include+enhanced+communication+safety+features.&start=6",
+              "3": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&num=6&q=Apple%27s+new+online+safety+tools+include+enhanced+communication+safety+features.&start=12",
+              "4": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&num=6&q=Apple%27s+new+online+safety+tools+include+enhanced+communication+safety+features.&start=18",
+              "5": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&num=6&q=Apple%27s+new+online+safety+tools+include+enhanced+communication+safety+features.&start=24",
+              "6": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&num=6&q=Apple%27s+new+online+safety+tools+include+enhanced+communication+safety+features.&start=30",
+              "7": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&num=6&q=Apple%27s+new+online+safety+tools+include+enhanced+communication+safety+features.&start=36",
+              "8": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&num=6&q=Apple%27s+new+online+safety+tools+include+enhanced+communication+safety+features.&start=42",
+              "9": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&num=6&q=Apple%27s+new+online+safety+tools+include+enhanced+communication+safety+features.&start=48",
+              "10": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&num=6&q=Apple%27s+new+online+safety+tools+include+enhanced+communication+safety+features.&start=54"
+            }
+          }
+        }
+      },
+      "evidence_agg": {
+        "evidence": [
+          {
+            "title": "Apple's latest tools to help protect kids and teens online ...",
+            "snippet": "Updates to Communication Limits, which give parents the ability to remotely approve new contacts for their children when using Apple apps. These ...",
+            "link": "https://www.apple.com/newsroom/2025/09/apples-latest-tools-to-help-protect-kids-and-teens-online-now-available/",
+            "domain": "apple.com",
+            "trust": 0.6
+          },
+          {
+            "title": "Apple expands tools to help parents protect kids and teens ...",
+            "snippet": "Communication Safety expands to intervene when nudity is detected in FaceTime video calls, and to blur out nudity in Shared Albums in Photos.",
+            "link": "https://www.apple.com/newsroom/2025/06/apple-expands-tools-to-help-parents-protect-kids-and-teens-online/",
+            "domain": "apple.com",
+            "trust": 0.6
+          },
+          {
+            "title": "Apple's latest online safety tools: What parents need to know",
+            "snippet": "These protections include Communication Safety features and web filters, all powered by enhanced age categorisation in the App Store. These ...",
+            "link": "https://gulfbusiness.com/apples-latest-online-safety-tools-what-parents-need-to-know/",
+            "domain": "gulfbusiness.com",
+            "trust": 0.6
+          },
+          {
+            "title": "New phone safety features can help kids",
+            "snippet": "Apple's new update requires kids to get parents' permission to text new numbers; Android phones have similar protections.",
+            "link": "https://www.deseret.com/family/2025/07/06/new-apple-update-safety-feature-helps-parents-teens/",
+            "domain": "deseret.com",
+            "trust": 0.6
+          }
+        ],
+        "consensus": {
+          "contradicts_claim": false,
+          "top_trust_avg": 0.6,
+          "top_domains": {
+            "apple.com": 2,
+            "gulfbusiness.com": 1,
+            "deseret.com": 1
+          }
+        },
+        "raw_snippets": "Apple's latest tools to help protect kids and teens online ... Updates to Communication Limits, which give parents the ability to remotely approve new contacts for their children when using Apple apps. These ... Apple expands tools to help parents protect kids and teens ... Communication Safety expands to intervene when nudity is detected in FaceTime video calls, and to blur out nudity in Shared Albums in Photos. Apple's latest online safety tools: What parents need to know These protections include Communication Safety features and web filters, all powered by enhanced age categorisation in the App Store. These ... New phone safety features can help kids Apple's new update requires kids to get parents' permission to text new numbers; Android phones have similar protections."
+      },
+      "phishing_analysis": null,
+      "final_verdict": "True",
+      "confidence": 0.76,
+      "reasons": [
+        "Aggregated signals indicate likely truth",
+        "Gemini note: The evidence strongly supports the claim that Apple's new online safety tools include enhanced communication safety features. Multiple sources from Apple's newsroom and other reputable outlets detail specific communication safety enhancemen"
+      ],
+      "final_score": 0.6,
+      "trust_score_pct": 80,
+      "qa_summary": "Q1: Why did we reach this verdict?\nA: Aggregated signals indicate likely truth; Gemini note: The evidence strongly supports the claim that Apple's new online safety tools include enhanced communication safety features. Multiple sources from Apple's newsroom and other reputable outlets detail specific communication safety enhancemen\n\nQ2: How was it verified?\nA: Verified by:\n- Top web references (up to 3):\n- apple.com: Apple's latest tools to help protect kids and teens online ... (https://www.apple.com/newsroom/2025/09/apples-latest-tools-to-help-protect-kids-and-teens-online-now-available/)\n- apple.com: Apple expands tools to help parents protect kids and teens ... (https://www.apple.com/newsroom/2025/06/apple-expands-tools-to-help-parents-protect-kids-and-teens-online/)\n- gulfbusiness.com: Apple's latest online safety tools: What parents need to know (https://gulfbusiness.com/apples-latest-online-safety-tools-what-parents-need-to-know/)\n- Automated checks: Gemini model analysis\n\nQ3: What should you do next?\nA: - Read the listed sources for full context and check publication dates. - Cross-check with official channels (government, company, or primary source)."
+    },
+    {
+      "claim": "Apple's new online safety tools include expanded parental controls.",
+      "context": "Apple Introduces New Online Safety Tools for Youth Apple has launched new features across its devices to help parents protect children and teens online. These tools include enhanced communication safety and expanded parental controls.",
+      "image_analysis": null,
+      "hf_classifier": {
+        "error": "hf-unavailable"
+      },
+      "gemini_verdict": {
+        "verdict": "True",
+        "overall": "The evidence strongly supports the claim that Apple's new online safety tools include expanded parental controls. Multiple sources, including Apple's official newsroom, explicitly state that Apple is introducing 'new and expanded features to help parents protect kids and teens online' and 'expanded parental controls.' Specific examples like managing kids' texting and app usage are also mentioned.",
+        "issues": [],
+        "citations": [
+          {
+            "source": "Apple's latest tools to help protect kids and teens online ...",
+            "snippet": "Apple's new and expanded features to help parents protect kids and teens online are now available across Apple devices.",
+            "url": "https://www.apple.com/newsroom/2025/09/apples-latest-tools-to-help-protect-kids-and-teens-online-now-available/"
+          },
+          {
+            "source": "Apple expands tools to help parents protect kids and teens ...",
+            "snippet": "Apple is offering more ways to help parents ensure their kids and teens have age-appropriate experiences from the moment they set up their device.",
+            "url": "https://www.apple.com/newsroom/2025/06/apple-expands-tools-to-help-parents-protect-kids-and-teens-online/"
+          },
+          {
+            "source": "iOS 26 will let parents manage who their kids text and what ...",
+            "snippet": "Apple's upcoming software update includes expanded parental controls, giving families more tools to manage kids' texting, app usage, and online safety.",
+            "url": "https://www.fox9.com/news/apple-parental-controls-ios26"
+          },
+          {
+            "source": "Apple's latest online safety tools: What parents need to know",
+            "snippet": "Simplifying child account setup · New age range sharing with apps · Extending protections to teens · Granular age ratings coming to App Store.",
+            "url": "https://gulfbusiness.com/apples-latest-online-safety-tools-what-parents-need-to-know/"
+          }
+        ]
+      },
+      "serpapi_result": {
+        "available": true,
+        "result": {
+          "search_metadata": {
+            "id": "68c934982f5ea010a72d7909",
+            "status": "Success",
+            "json_endpoint": "https://serpapi.com/searches/690707fa230e201f/68c934982f5ea010a72d7909.json",
+            "pixel_position_endpoint": "https://serpapi.com/searches/690707fa230e201f/68c934982f5ea010a72d7909.json_with_pixel_position",
+            "created_at": "2025-09-16 09:57:44 UTC",
+            "processed_at": "2025-09-16 09:57:44 UTC",
+            "google_url": "https://www.google.com/search?q=Apple%27s+new+online+safety+tools+include+expanded+parental+controls.&oq=Apple%27s+new+online+safety+tools+include+expanded+parental+controls.&num=6&sourceid=chrome&ie=UTF-8",
+            "raw_html_file": "https://serpapi.com/searches/690707fa230e201f/68c934982f5ea010a72d7909.html",
+            "total_time_taken": 1.05
+          },
+          "search_parameters": {
+            "engine": "google",
+            "q": "Apple's new online safety tools include expanded parental controls.",
+            "google_domain": "google.com",
+            "num": "6",
+            "device": "desktop"
+          },
+          "search_information": {
+            "query_displayed": "Apple's new online safety tools include expanded parental controls.",
+            "total_results": 19200000,
+            "time_taken_displayed": 0.51,
+            "organic_results_state": "Results for exact spelling"
+          },
+          "inline_videos": [
+            {
+              "position": 1,
+              "title": "Enhance child safety with PermissionKit - WWDC25 - Videos",
+              "link": "https://developer.apple.com/videos/play/wwdc2025/293/",
+              "thumbnail": "https://serpapi.com/searches/68c934982f5ea010a72d7909/images/0dc8d2ef0a7b6ed499347a268c815fb5f62b71550062aa1dd20ec59e9bf292f5.jpeg",
+              "channel": "Apple Developer",
+              "platform": "Apple Developer"
+            },
+            {
+              "position": 2,
+              "title": "Apple is expanding its tools to help parents protect their kids ...",
+              "link": "https://www.facebook.com/CBSMornings/videos/apple-is-expanding-its-tools-to-help-parents-protect-their-kids-online/602419886220415/",
+              "thumbnail": "https://serpapi.com/searches/68c934982f5ea010a72d7909/images/0dc8d2ef0a7b6ed49921c72638f8ae6345ec7a55078dcc24d3e87e85a81676f4.jpeg",
+              "channel": "CBS Mornings",
+              "duration": "0:31",
+              "platform": "Facebook"
+            },
+            {
+              "position": 3,
+              "title": "iPhone Parental Controls Made Easy (Step by Step Guide)",
+              "link": "https://www.youtube.com/watch?v=Smyo1c0_TB4",
+              "thumbnail": "https://serpapi.com/searches/68c934982f5ea010a72d7909/images/0dc8d2ef0a7b6ed49b358ad2f9a9014d281eeed5c81617522c8381c753f743cb.jpeg",
+              "channel": "Mummy of Four UK - Rhiannan Morgan",
+              "duration": "21:22",
+              "platform": "YouTube"
+            }
+          ],
+          "short_videos": [
+            {
+              "position": 1,
+              "title": "Apple is expanding its tools to help parents protect their kids ... by CBS Mornings on Facebook. Play on Facebook.",
+              "source": "Facebook",
+              "profile_name": "CBS Mornings",
+              "extensions": [
+                "CBS Mornings"
+              ],
+              "source_logo": "https://serpapi.com/searches/68c934982f5ea010a72d7909/images/14c13c9197ced262e9dd379efdba39dfbf2fe8d5d1e55b03cdbf0e10399fe74f.png",
+              "thumbnail": "https://serpapi.com/searches/68c934982f5ea010a72d7909/images/14c13c9197ced262baf6c603194882e05a755232b8b219de9ceac78225fc756a.jpeg",
+              "link": "https://www.facebook.com/CBSMornings/videos/apple-is-expanding-its-tools-to-help-parents-protect-their-kids-online/602419886220415/"
+            },
+            {
+              "position": 2,
+              "title": "Apple expands parental protection tools #shorts",
+              "source": "YouTube",
+              "profile_name": "CBS Mornings",
+              "extensions": [
+                "CBS Mornings"
+              ],
+              "source_logo": "https://serpapi.com/searches/68c934982f5ea010a72d7909/images/14c13c9197ced262320d7d0a38419fa1dd1f4e2f32f341adf4e973fe1c1809aa.png",
+              "date": "Jun 13, 2025",
+              "thumbnail": "https://serpapi.com/searches/68c934982f5ea010a72d7909/images/14c13c9197ced262129a666972b54c4e61b4b4fa22ae801685b33ccf1ae7163c.jpeg",
+              "link": "https://www.youtube.com/shorts/h5cLfmXK0nE"
+            },
+            {
+              "position": 3,
+              "title": "How to enable communication limits parental controls on ...",
+              "source": "YouTube",
+              "profile_name": "CyberFareedah",
+              "extensions": [
+                "CyberFareedah"
+              ],
+              "source_logo": "https://serpapi.com/searches/68c934982f5ea010a72d7909/images/14c13c9197ced262b36142815c6ca2cc77150180ac0378ae846ab4f1856e699e.png",
+              "date": "Jul 20, 2025",
+              "thumbnail": "https://serpapi.com/searches/68c934982f5ea010a72d7909/images/14c13c9197ced262ea17c6cb1abfac0aa7b0165232056e88a6c913b480c06c91.jpeg",
+              "link": "https://www.youtube.com/watch?v=ozax4KiROxs"
+            },
+            {
+              "position": 4,
+              "title": "Did you know about these Apple parental controls?",
+              "source": "YouTube",
+              "profile_name": "CyberFareedah",
+              "extensions": [
+                "CyberFareedah"
+              ],
+              "source_logo": "https://serpapi.com/searches/68c934982f5ea010a72d7909/images/14c13c9197ced2627773c25b1a7d52b9541ecfaea41ab727c8c1483a225a5d07.png",
+              "date": "May 6, 2025",
+              "thumbnail": "https://serpapi.com/searches/68c934982f5ea010a72d7909/images/14c13c9197ced2620a44fb599e142d18040a7c80e70f59d760b46c1832c83020.jpeg",
+              "link": "https://www.youtube.com/shorts/C9O9KmsbWdE"
+            },
+            {
+              "position": 5,
+              "title": "Pro tip for parents: enable Guided Access on #iPhone or ...",
+              "source": "YouTube",
+              "profile_name": "9to5Mac",
+              "extensions": [
+                "9to5Mac"
+              ],
+              "source_logo": "https://serpapi.com/searches/68c934982f5ea010a72d7909/images/14c13c9197ced2625d2d7448bc1174014abf10d2c40bc94706b2c3e00737a5f8.png",
+              "date": "Jun 4, 2025",
+              "thumbnail": "https://serpapi.com/searches/68c934982f5ea010a72d7909/images/14c13c9197ced2622d2625c5539cb30881569cccff67e764c5b13d909f2483e6.jpeg",
+              "link": "https://www.youtube.com/shorts/l7IBBsuBYHE"
+            },
+            {
+              "position": 6,
+              "title": "Using Apple's screen time function isn't enough when it comes ...",
+              "source": "YouTube",
+              "profile_name": "Bark",
+              "extensions": [
+                "Bark"
+              ],
+              "source_logo": "https://serpapi.com/searches/68c934982f5ea010a72d7909/images/14c13c9197ced2622632d45a223b45d496068201f0060346623aabe7ab5dbfd3.png",
+              "date": "Jan 23, 2024",
+              "thumbnail": "https://serpapi.com/searches/68c934982f5ea010a72d7909/images/14c13c9197ced262279f219366f4f8dc011aca746275748d9ab6a774672e385f.jpeg",
+              "link": "https://www.youtube.com/watch?v=k8k2eEHL6rc"
+            }
+          ],
+          "organic_results": [
+            {
+              "position": 1,
+              "title": "Apple's latest tools to help protect kids and teens online ...",
+              "link": "https://www.apple.com/newsroom/2025/09/apples-latest-tools-to-help-protect-kids-and-teens-online-now-available/",
+              "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.apple.com/newsroom/2025/09/apples-latest-tools-to-help-protect-kids-and-teens-online-now-available/&ved=2ahUKEwiJ_7e2gt2PAxVh4skDHQNFH04QFnoECB8QAQ",
+              "displayed_link": "https://www.apple.com › newsroom › 2025/09 › apples-l...",
+              "favicon": "https://serpapi.com/searches/68c934982f5ea010a72d7909/images/d0317229da98e6e27cb319c3bbdebd37840d4b530a373cc0308229cd0d1c21d5.png",
+              "date": "17 hours ago",
+              "snippet": "Apple's new and expanded features to help parents protect kids and teens online are now available across Apple devices.",
+              "snippet_highlighted_words": [
+                "Apple's new",
+                "expanded",
+                "parents",
+                "online",
+                "Apple"
+              ],
+              "source": "Apple"
+            },
+            {
+              "position": 2,
+              "title": "Apple expands tools to help parents protect kids and teens ...",
+              "link": "https://www.apple.com/newsroom/2025/06/apple-expands-tools-to-help-parents-protect-kids-and-teens-online/",
+              "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.apple.com/newsroom/2025/06/apple-expands-tools-to-help-parents-protect-kids-and-teens-online/&ved=2ahUKEwiJ_7e2gt2PAxVh4skDHQNFH04QFnoECBsQAQ",
+              "displayed_link": "https://www.apple.com › newsroom › 2025/06 › apple-e...",
+              "favicon": "https://serpapi.com/searches/68c934982f5ea010a72d7909/images/d0317229da98e6e27cb319c3bbdebd374798275b8a124c044721ddd0876d11cb.png",
+              "date": "Jun 11, 2025",
+              "snippet": "Apple is offering more ways to help parents ensure their kids and teens have age-appropriate experiences from the moment they set up their device.",
+              "snippet_highlighted_words": [
+                "Apple",
+                "parents",
+                "have"
+              ],
+              "source": "Apple"
+            },
+            {
+              "position": 3,
+              "title": "iOS 26 will let parents manage who their kids text and what ...",
+              "link": "https://www.fox9.com/news/apple-parental-controls-ios26",
+              "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.fox9.com/news/apple-parental-controls-ios26&ved=2ahUKEwiJ_7e2gt2PAxVh4skDHQNFH04QFnoECBoQAQ",
+              "displayed_link": "https://www.fox9.com › apple-parental-controls-ios26",
+              "favicon": "https://serpapi.com/searches/68c934982f5ea010a72d7909/images/d0317229da98e6e27cb319c3bbdebd378b6917c6f8bb0aee72eb6f8a03867302.jpeg",
+              "date": "Jun 13, 2025",
+              "snippet": "Apple's upcoming software update includes expanded parental controls, giving families more tools to manage kids' texting, app usage, and online safety.",
+              "snippet_highlighted_words": [
+                "Apple's upcoming software update includes expanded parental controls"
+              ],
+              "source": "FOX 9 Minneapolis-St. Paul"
+            },
+            {
+              "position": 4,
+              "title": "Apple's latest online safety tools: What parents need to know",
+              "link": "https://gulfbusiness.com/apples-latest-online-safety-tools-what-parents-need-to-know/",
+              "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://gulfbusiness.com/apples-latest-online-safety-tools-what-parents-need-to-know/&ved=2ahUKEwiJ_7e2gt2PAxVh4skDHQNFH04QFnoECB4QAQ",
+              "displayed_link": "https://gulfbusiness.com › apples-latest-online-safety-to...",
+              "favicon": "https://serpapi.com/searches/68c934982f5ea010a72d7909/images/d0317229da98e6e27cb319c3bbdebd3748e4676c88260c332abbea58f600adea.png",
+              "date": "Jun 19, 2025",
+              "snippet": "Simplifying child account setup · New age range sharing with apps · Extending protections to teens · Granular age ratings coming to App Store.",
+              "snippet_highlighted_words": [
+                "Simplifying child account setup"
+              ],
+              "source": "Gulf Business"
+            },
+            {
+              "position": 5,
+              "title": "Apple expands tools to help parents protect kids and teens ...",
+              "link": "https://www.reddit.com/r/apple/comments/1l8xa0v/apple_expands_tools_to_help_parents_protect_kids/",
+              "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.reddit.com/r/apple/comments/1l8xa0v/apple_expands_tools_to_help_parents_protect_kids/&ved=2ahUKEwiJ_7e2gt2PAxVh4skDHQNFH04QFnoECDMQAQ",
+              "displayed_link": "10+ comments · 3 months ago",
+              "favicon": "https://serpapi.com/searches/68c934982f5ea010a72d7909/images/d0317229da98e6e27cb319c3bbdebd37082719cc71ecf0c9d9e4f0e9f126606a.png",
+              "snippet": "Apple expands tools to help parents protect kids and teens online. Discussion.",
+              "snippet_highlighted_words": [
+                "Apple expands tools",
+                "parents",
+                "online"
+              ],
+              "source": "Reddit · r/apple"
+            }
+          ],
+          "top_stories": [
+            {
+              "title": "Apple Rolls Out New Online Safety Tools for Kids and Teens with IOS 26",
+              "link": "https://www.911hotfm.com.au/trending/technology/apple-rolls-out-new-online-safety-tools-for-kids-and-teens-with-ios-26/",
+              "source": "91.1 Hot FM",
+              "source_logo": "https://serpapi.com/searches/68c934982f5ea010a72d7909/images/91dfdbe95065c481f1f5f130ca85e852dd4a543b132d7d3da0f618b29875e9c9.png",
+              "date": "4 hours ago",
+              "thumbnail": "https://serpapi.com/searches/68c934982f5ea010a72d7909/images/91dfdbe95065c481430b491556d23ce663b71ae1a795afc5.jpeg"
+            },
+            {
+              "title": "Apple’s latest tools to help protect kids and teens online now available",
+              "link": "https://www.apple.com/newsroom/2025/09/apples-latest-tools-to-help-protect-kids-and-teens-online-now-available/",
+              "source": "Apple",
+              "source_logo": "https://serpapi.com/searches/68c934982f5ea010a72d7909/images/91dfdbe95065c4810850b2972cea7ca25cd7e678a4cff65867e44e51fd450cef.png",
+              "date": "17 hours ago",
+              "thumbnail": "https://serpapi.com/searches/68c934982f5ea010a72d7909/images/91dfdbe95065c481d35f5a1ffdeb8a01103ecefa3ecbc806.jpeg"
+            }
+          ],
+          "top_stories_link": "https://www.google.com/search?num=6&sca_esv=8fb985a9e177f272&q=Apple%27s+new+online+safety+tools+include+expanded+parental+controls.&tbm=nws&source=univ&tbo=u&sa=X&ved=2ahUKEwiJ_7e2gt2PAxVh4skDHQNFH04Qt8YBKAF6BAgYEAM",
+          "top_stories_serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&num=6&q=Apple%27s+new+online+safety+tools+include+expanded+parental+controls.&tbm=nws",
+          "pagination": {
+            "current": 1,
+            "next": "https://www.google.com/search?q=Apple's+new+online+safety+tools+include+expanded+parental+controls.&num=6&sca_esv=8fb985a9e177f272&ei=mDTJaInTJuHEp84Pg4r98AQ&start=6&sa=N&sstk=Ac65TH5SOmhH_94tjlhYsNDS82BMlOVG9gx2sRrymThaGV8fxNygmWrl-i6_WPnn9sRzfO4PMh-fePKKjzRQA_UuT8iSPWZBJKL9JA&ved=2ahUKEwiJ_7e2gt2PAxVh4skDHQNFH04Q8NMDegQICxAW",
+            "other_pages": {
+              "2": "https://www.google.com/search?q=Apple's+new+online+safety+tools+include+expanded+parental+controls.&num=6&sca_esv=8fb985a9e177f272&ei=mDTJaInTJuHEp84Pg4r98AQ&start=6&sa=N&sstk=Ac65TH5SOmhH_94tjlhYsNDS82BMlOVG9gx2sRrymThaGV8fxNygmWrl-i6_WPnn9sRzfO4PMh-fePKKjzRQA_UuT8iSPWZBJKL9JA&ved=2ahUKEwiJ_7e2gt2PAxVh4skDHQNFH04Q8tMDegQICxAE",
+              "3": "https://www.google.com/search?q=Apple's+new+online+safety+tools+include+expanded+parental+controls.&num=6&sca_esv=8fb985a9e177f272&ei=mDTJaInTJuHEp84Pg4r98AQ&start=12&sa=N&sstk=Ac65TH5SOmhH_94tjlhYsNDS82BMlOVG9gx2sRrymThaGV8fxNygmWrl-i6_WPnn9sRzfO4PMh-fePKKjzRQA_UuT8iSPWZBJKL9JA&ved=2ahUKEwiJ_7e2gt2PAxVh4skDHQNFH04Q8tMDegQICxAG",
+              "4": "https://www.google.com/search?q=Apple's+new+online+safety+tools+include+expanded+parental+controls.&num=6&sca_esv=8fb985a9e177f272&ei=mDTJaInTJuHEp84Pg4r98AQ&start=18&sa=N&sstk=Ac65TH5SOmhH_94tjlhYsNDS82BMlOVG9gx2sRrymThaGV8fxNygmWrl-i6_WPnn9sRzfO4PMh-fePKKjzRQA_UuT8iSPWZBJKL9JA&ved=2ahUKEwiJ_7e2gt2PAxVh4skDHQNFH04Q8tMDegQICxAI",
+              "5": "https://www.google.com/search?q=Apple's+new+online+safety+tools+include+expanded+parental+controls.&num=6&sca_esv=8fb985a9e177f272&ei=mDTJaInTJuHEp84Pg4r98AQ&start=24&sa=N&sstk=Ac65TH5SOmhH_94tjlhYsNDS82BMlOVG9gx2sRrymThaGV8fxNygmWrl-i6_WPnn9sRzfO4PMh-fePKKjzRQA_UuT8iSPWZBJKL9JA&ved=2ahUKEwiJ_7e2gt2PAxVh4skDHQNFH04Q8tMDegQICxAK",
+              "6": "https://www.google.com/search?q=Apple's+new+online+safety+tools+include+expanded+parental+controls.&num=6&sca_esv=8fb985a9e177f272&ei=mDTJaInTJuHEp84Pg4r98AQ&start=30&sa=N&sstk=Ac65TH5SOmhH_94tjlhYsNDS82BMlOVG9gx2sRrymThaGV8fxNygmWrl-i6_WPnn9sRzfO4PMh-fePKKjzRQA_UuT8iSPWZBJKL9JA&ved=2ahUKEwiJ_7e2gt2PAxVh4skDHQNFH04Q8tMDegQICxAM",
+              "7": "https://www.google.com/search?q=Apple's+new+online+safety+tools+include+expanded+parental+controls.&num=6&sca_esv=8fb985a9e177f272&ei=mDTJaInTJuHEp84Pg4r98AQ&start=36&sa=N&sstk=Ac65TH5SOmhH_94tjlhYsNDS82BMlOVG9gx2sRrymThaGV8fxNygmWrl-i6_WPnn9sRzfO4PMh-fePKKjzRQA_UuT8iSPWZBJKL9JA&ved=2ahUKEwiJ_7e2gt2PAxVh4skDHQNFH04Q8tMDegQICxAO",
+              "8": "https://www.google.com/search?q=Apple's+new+online+safety+tools+include+expanded+parental+controls.&num=6&sca_esv=8fb985a9e177f272&ei=mDTJaInTJuHEp84Pg4r98AQ&start=42&sa=N&sstk=Ac65TH5SOmhH_94tjlhYsNDS82BMlOVG9gx2sRrymThaGV8fxNygmWrl-i6_WPnn9sRzfO4PMh-fePKKjzRQA_UuT8iSPWZBJKL9JA&ved=2ahUKEwiJ_7e2gt2PAxVh4skDHQNFH04Q8tMDegQICxAQ",
+              "9": "https://www.google.com/search?q=Apple's+new+online+safety+tools+include+expanded+parental+controls.&num=6&sca_esv=8fb985a9e177f272&ei=mDTJaInTJuHEp84Pg4r98AQ&start=48&sa=N&sstk=Ac65TH5SOmhH_94tjlhYsNDS82BMlOVG9gx2sRrymThaGV8fxNygmWrl-i6_WPnn9sRzfO4PMh-fePKKjzRQA_UuT8iSPWZBJKL9JA&ved=2ahUKEwiJ_7e2gt2PAxVh4skDHQNFH04Q8tMDegQICxAS",
+              "10": "https://www.google.com/search?q=Apple's+new+online+safety+tools+include+expanded+parental+controls.&num=6&sca_esv=8fb985a9e177f272&ei=mDTJaInTJuHEp84Pg4r98AQ&start=54&sa=N&sstk=Ac65TH5SOmhH_94tjlhYsNDS82BMlOVG9gx2sRrymThaGV8fxNygmWrl-i6_WPnn9sRzfO4PMh-fePKKjzRQA_UuT8iSPWZBJKL9JA&ved=2ahUKEwiJ_7e2gt2PAxVh4skDHQNFH04Q8tMDegQICxAU"
+            }
+          },
+          "serpapi_pagination": {
+            "current": 1,
+            "next_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&num=6&q=Apple%27s+new+online+safety+tools+include+expanded+parental+controls.&start=6",
+            "next": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&num=6&q=Apple%27s+new+online+safety+tools+include+expanded+parental+controls.&start=6",
+            "other_pages": {
+              "2": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&num=6&q=Apple%27s+new+online+safety+tools+include+expanded+parental+controls.&start=6",
+              "3": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&num=6&q=Apple%27s+new+online+safety+tools+include+expanded+parental+controls.&start=12",
+              "4": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&num=6&q=Apple%27s+new+online+safety+tools+include+expanded+parental+controls.&start=18",
+              "5": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&num=6&q=Apple%27s+new+online+safety+tools+include+expanded+parental+controls.&start=24",
+              "6": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&num=6&q=Apple%27s+new+online+safety+tools+include+expanded+parental+controls.&start=30",
+              "7": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&num=6&q=Apple%27s+new+online+safety+tools+include+expanded+parental+controls.&start=36",
+              "8": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&num=6&q=Apple%27s+new+online+safety+tools+include+expanded+parental+controls.&start=42",
+              "9": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&num=6&q=Apple%27s+new+online+safety+tools+include+expanded+parental+controls.&start=48",
+              "10": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&num=6&q=Apple%27s+new+online+safety+tools+include+expanded+parental+controls.&start=54"
+            }
+          }
+        }
+      },
+      "evidence_agg": {
+        "evidence": [
+          {
+            "title": "Apple's latest tools to help protect kids and teens online ...",
+            "snippet": "Apple's new and expanded features to help parents protect kids and teens online are now available across Apple devices.",
+            "link": "https://www.apple.com/newsroom/2025/09/apples-latest-tools-to-help-protect-kids-and-teens-online-now-available/",
+            "domain": "apple.com",
+            "trust": 0.6
+          },
+          {
+            "title": "Apple expands tools to help parents protect kids and teens ...",
+            "snippet": "Apple is offering more ways to help parents ensure their kids and teens have age-appropriate experiences from the moment they set up their device.",
+            "link": "https://www.apple.com/newsroom/2025/06/apple-expands-tools-to-help-parents-protect-kids-and-teens-online/",
+            "domain": "apple.com",
+            "trust": 0.6
+          },
+          {
+            "title": "iOS 26 will let parents manage who their kids text and what ...",
+            "snippet": "Apple's upcoming software update includes expanded parental controls, giving families more tools to manage kids' texting, app usage, and online safety.",
+            "link": "https://www.fox9.com/news/apple-parental-controls-ios26",
+            "domain": "fox9.com",
+            "trust": 0.6
+          },
+          {
+            "title": "Apple's latest online safety tools: What parents need to know",
+            "snippet": "Simplifying child account setup · New age range sharing with apps · Extending protections to teens · Granular age ratings coming to App Store.",
+            "link": "https://gulfbusiness.com/apples-latest-online-safety-tools-what-parents-need-to-know/",
+            "domain": "gulfbusiness.com",
+            "trust": 0.6
+          },
+          {
+            "title": "Apple expands tools to help parents protect kids and teens ...",
+            "snippet": "Apple expands tools to help parents protect kids and teens online. Discussion.",
+            "link": "https://www.reddit.com/r/apple/comments/1l8xa0v/apple_expands_tools_to_help_parents_protect_kids/",
+            "domain": "reddit.com",
+            "trust": 0.6
+          }
+        ],
+        "consensus": {
+          "contradicts_claim": false,
+          "top_trust_avg": 0.6,
+          "top_domains": {
+            "apple.com": 2,
+            "fox9.com": 1,
+            "gulfbusiness.com": 1,
+            "reddit.com": 1
+          }
+        },
+        "raw_snippets": "Apple's latest tools to help protect kids and teens online ... Apple's new and expanded features to help parents protect kids and teens online are now available across Apple devices. Apple expands tools to help parents protect kids and teens ... Apple is offering more ways to help parents ensure their kids and teens have age-appropriate experiences from the moment they set up their device. iOS 26 will let parents manage who their kids text and what ... Apple's upcoming software update includes expanded parental controls, giving families more tools to manage kids' texting, app usage, and online safety. Apple's latest online safety tools: What parents need to know Simplifying child account setup · New age range sharing with apps · Extending protections to teens · Granular age ratings coming to App Store. Apple expands tools to help parents protect kids and teens ... Apple expands tools to help parents protect kids and teens online. Discussion."
+      },
+      "phishing_analysis": null,
+      "final_verdict": "True",
+      "confidence": 0.76,
+      "reasons": [
+        "Aggregated signals indicate likely truth",
+        "Gemini note: The evidence strongly supports the claim that Apple's new online safety tools include expanded parental controls. Multiple sources, including Apple's official newsroom, explicitly state that Apple is introducing 'new and expanded features t"
+      ],
+      "final_score": 0.6,
+      "trust_score_pct": 80,
+      "qa_summary": "Q1: Why did we reach this verdict?\nA: Aggregated signals indicate likely truth; Gemini note: The evidence strongly supports the claim that Apple's new online safety tools include expanded parental controls. Multiple sources, including Apple's official newsroom, explicitly state that Apple is introducing 'new and expanded features t\n\nQ2: How was it verified?\nA: Verified by:\n- Top web references (up to 3):\n- apple.com: Apple's latest tools to help protect kids and teens online ... (https://www.apple.com/newsroom/2025/09/apples-latest-tools-to-help-protect-kids-and-teens-online-now-available/)\n- apple.com: Apple expands tools to help parents protect kids and teens ... (https://www.apple.com/newsroom/2025/06/apple-expands-tools-to-help-parents-protect-kids-and-teens-online/)\n- fox9.com: iOS 26 will let parents manage who their kids text and what ... (https://www.fox9.com/news/apple-parental-controls-ios26)\n- Automated checks: Gemini model analysis\n\nQ3: What should you do next?\nA: - Read the listed sources for full context and check publication dates. - Cross-check with official channels (government, company, or primary source)."
+    }
+  ],
+  "summary": {
+    "counts": {
+      "True": 3
+    },
+    "dominant_verdict": "True",
+    "modal_accuracy": 0
+  },
+  "url": null,
+  "timestamp": 1758016678.0475953
+}

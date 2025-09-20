@@ -1,0 +1,55 @@
+.loading-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #0a0a0a;
+  overflow: hidden;
+}
+
+.loading-text {
+  position: relative;
+  background: transparent;
+  --stroke-color: #ffffff70;
+  --ani-color: rgba(255, 255, 255, 0);
+  --color-gar: linear-gradient(90deg,#c0c0c0,#ffffff,#c0c0c0);
+  letter-spacing: 3px;
+  font-size: 3rem;
+  font-family: "Arial Black", sans-serif;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--stroke-color);
+}
+
+.front-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--color-gar);
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-size: 200%;
+  animation: shimmer 3s infinite linear;
+  -webkit-text-stroke: 1px var(--ani-color);
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.sub-text {
+  margin-top: 1rem;
+  color: #bbb;
+  font-size: 1rem;
+  font-style: italic;
+  opacity: 0.7;
+  animation: fadeIn 2s ease-in-out infinite alternate;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}

@@ -1,0 +1,11 @@
+/* MisinfoAnalyzer.css
+   Custom styles to complement Tailwind: nicer buttons, card shadows,
+   smoother gauge animation, subtle background gradients, and scrollbar.
+*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  background-color:#212121;
+}

@@ -1,0 +1,681 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>12-Week Programming & Unity Study Plan — Interactive</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* small UI niceties */
+    .card { background: white; border-radius: 12px; box-shadow: 0 6px 18px rgba(16,24,40,0.06); }
+    .muted { color: #6b7280; }
+    .pill { background: linear-gradient(90deg,#7c3aed,#4f46e5); color: white; padding: 6px 10px; border-radius: 999px; font-weight: 600; font-size: 12px; }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-slate-50 to-white min-h-screen font-sans text-slate-900">
+  <div class="max-w-7xl mx-auto p-6">
+    <header class="flex items-center gap-4 mb-6">
+      <div class="flex-grow">
+        <h1 class="text-2xl md:text-3xl font-extrabold">12-Week Programming & Unity Study Plan</h1>
+        <p class="muted mt-1">Structured roadmap + quizzes every week · progress saved locally</p>
+      </div>
+      <div class="flex gap-2 items-center">
+        <a href="https://learn.unity.com/" target="_blank" rel="noopener" class="px-4 py-2 border rounded-md text-sm bg-white hover:shadow">Unity Learn</a>
+        <button id="exportBtn" class="px-4 py-2 rounded-md bg-indigo-600 text-white text-sm hover:bg-indigo-700">Export Progress</button>
+        <button id="resetBtn" class="px-3 py-2 rounded-md border text-sm text-red-600 hover:bg-red-50">Reset</button>
+      </div>
+    </header>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <!-- left: roadmap -->
+      <section class="md:col-span-2 space-y-6">
+        <div class="card p-5">
+          <div class="flex items-start justify-between">
+            <div>
+              <h2 class="text-lg font-bold">Roadmap (12 weeks)</h2>
+              <p class="muted mt-1">Click a week to view tasks & take the quiz.</p>
+            </div>
+            <div class="text-right">
+              <div class="pill">3 months plan</div>
+              <div class="muted text-xs mt-1">6 days/week suggested</div>
+            </div>
+          </div>
+
+          <div id="weeksList" class="mt-4 space-y-3"></div>
+        </div>
+
+        <div id="weekDetails" class="card p-5 hidden">
+          <!-- dynamic week details -->
+        </div>
+
+        <div class="card p-5">
+          <h3 class="font-semibold">Final Project Guidance</h3>
+          <p class="muted mt-2">During Week 12 you will build a small polished game. Keep scope small (2–6 minutes of gameplay). Use version control and upload source + a short demo video.</p>
+          <ul class="mt-3 list-disc list-inside muted">
+            <li>Choose a vertical slice early (Week 3 prototype)</li>
+            <li>Iterate: prototype → core mechanics → polish</li>
+            <li>Deliverables: playable build, GitHub repo, README, demo video</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- right: progress & quiz area -->
+      <aside class="space-y-6">
+        <div class="card p-4">
+          <h3 class="font-semibold">Your Progress</h3>
+          <div class="mt-3 text-sm muted">
+            <div>Completed Weeks: <span id="completedCount">0</span> / 12</div>
+            <div class="mt-2">Quizzes taken: <span id="quizzesTaken">0</span></div>
+            <div class="mt-2">Last exported: <span id="lastExport">never</span></div>
+          </div>
+        </div>
+
+        <div class="card p-4">
+          <h3 class="font-semibold">Quick Quiz Launcher</h3>
+          <p class="muted text-sm mt-2">Open any week's quiz or the final cumulative quiz.</p>
+          <div id="quickQuizList" class="mt-3 grid gap-2"></div>
+        </div>
+
+        <div class="card p-4">
+          <h3 class="font-semibold">Study Tips</h3>
+          <ul class="muted mt-2 list-disc list-inside text-sm">
+            <li>Practice daily for consistency.</li>
+            <li>Finish weekly mini-projects — they teach more than tutorials.</li>
+            <li>When stuck, read docs & break problems into smaller steps.</li>
+            <li>Join a jam to sharpen your iteration skills.</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Quiz modal / panel -->
+    <div id="quizModal" class="fixed inset-0 bg-black/40 hidden items-center justify-center z-50 p-4">
+      <div class="bg-white rounded-xl shadow-xl w-full max-w-3xl p-5">
+        <div class="flex items-start justify-between">
+          <div>
+            <h3 id="quizTitle" class="text-lg font-bold">Quiz</h3>
+            <p id="quizSubtitle" class="muted text-sm">Week … · 0 / 0</p>
+          </div>
+          <div class="flex gap-2">
+            <button id="closeQuiz" class="px-3 py-1 border rounded-md muted">Close</button>
+          </div>
+        </div>
+
+        <div id="quizContent" class="mt-4 space-y-4">
+          <!-- question content -->
+        </div>
+
+        <div class="flex items-center justify-between mt-4">
+          <div class="muted text-sm" id="quizProgressText">Question 1 / 5</div>
+          <div class="flex gap-2">
+            <button id="prevQ" class="px-3 py-1 border rounded-md muted">Prev</button>
+            <button id="nextQ" class="px-3 py-1 bg-indigo-600 text-white rounded-md">Next</button>
+            <button id="finishQ" class="px-3 py-1 bg-green-600 text-white rounded-md hidden">Finish</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- template for success toast -->
+    <div id="toast" class="fixed right-6 bottom-6 bg-indigo-600 text-white px-4 py-2 rounded-md shadow-lg hidden">Saved</div>
+  </div>
+
+<script>
+/* ===========================
+   Data: 12-week plan + quizzes
+   =========================== */
+const PLAN = [
+  { id:1, title:"Week 1 — Programming fundamentals", tasks:[
+      "Variables & types; console I/O (Hello world).",
+      "Conditionals (if / switch).",
+      "Loops (for, while).",
+      "Functions and scope.",
+      "Practice: fizzbuzz, sum array.",
+      "Mini-project: in-memory todo list."
+    ],
+    quiz:[
+      {q:"Which keyword returns a value from a function?", choices:["break","return","yield","exit"], a:1, explain:"`return` returns a value from a function."},
+      {q:"Which loop guarantees at least one iteration?", choices:["for","while","do...while","foreach"], a:2, explain:"`do...while` runs the body at least once."},
+      {q:"`let` vs `var` in JS — `var` has which scope?", choices:["Block","Function","Global only","No scope"], a:1, explain:"`var` is function scoped."},
+      {q:"In C#, which type holds decimal numbers?", choices:["int","string","float","bool"], a:2, explain:"`float` or `double` hold decimals."},
+      {q:"What does `===` mean in JS?", choices:["Assignment","Strict equality","Loose equality","Comparison"], a:1, explain:"`===` checks type and value (strict equality)."}
+    ]
+  },
+
+  { id:2, title:"Week 2 — Data types & arrays", tasks:[
+      "Strings: slicing, search, replace.",
+      "Arrays: push/pop, splice, map/filter/reduce.",
+      "Objects / maps (key-value).",
+      "Common array patterns (unique, chunk).",
+      "Practice: frequency map, anagram check.",
+      "Mini-project: text analyzer (word count)."
+    ],
+    quiz:[
+      {q:"Which array method returns a new transformed array?", choices:["forEach","map","filter","reduce"], a:1, explain:"`map` returns a new array."},
+      {q:"Remove last element of array in JS:", choices:["pop()","remove()","shift()","splice()"], a:0, explain:"`pop()` removes the last element."},
+      {q:"Which structure best counts word frequencies?", choices:["Array","Set","Object/Map","String"], a:2, explain:"Use an object or Map for counts."},
+      {q:"Which returns a boolean if all elements pass a test?", choices:["some","every","filter","find"], a:1, explain:"`every` returns true if all items pass."},
+      {q:"Which is O(n) for array length n?", choices:["Access by index","Search for element","Insert at end (amortized)","All O(1)"], a:1, explain:"Searching is O(n)."}
+    ]
+  },
+
+  { id:3, title:"Week 3 — Algorithms basics", tasks:[
+      "Linear & binary search.",
+      "Sorting basics: bubble, selection, insertion.",
+      "Quicksort & mergesort concepts.",
+      "Recursion: factorial, fibonacci.",
+      "Compare sort times on random arrays.",
+      "Mini-project: sort & analyze."
+    ],
+    quiz:[
+      {q:"Binary search requires:", choices:["Unsorted array","Sorted array","A map","A tree"], a:1, explain:"Binary search works on sorted arrays."},
+      {q:"Average complexity of quicksort:", choices:["O(n^2)","O(n)","O(n log n)","O(log n)"], a:2, explain:"Average complexity is O(n log n)."},
+      {q:"Why recursive Fibonacci is inefficient?", choices:["Stack overflow","Repeated calculations","No base case","None"], a:1, explain:"It repeats many subcomputations."},
+      {q:"Which algorithm is stable?", choices:["Quicksort","MergeSort","HeapSort","SelectionSort"], a:1, explain:"MergeSort is stable."},
+      {q:"Bubble sort average complexity:", choices:["O(n log n)","O(n)","O(n^2)","Divide&amp;conquer"], a:2, explain:"Bubble sort is O(n^2)."}
+    ]
+  },
+
+  { id:4, title:"Week 4 — Data structures", tasks:[
+      "Stack & queue concepts and ops.",
+      "Linked list basics (singly).",
+      "Hash maps and collisions.",
+      "LRU cache concept & sets.",
+      "Implement stack/queue/linked list.",
+      "Mini-project: queue-based task scheduler."
+    ],
+    quiz:[
+      {q:"Which is LIFO?", choices:["Queue","Stack","Map","Tree"], a:1, explain:"Stack is LIFO (Last In First Out)."},
+      {q:"Average lookup in hash map:", choices:["O(1)","O(n)","O(log n)","O(n log n)"], a:0, explain:"Amortized O(1)."},
+      {q:"Which is best for FIFO?", choices:["Stack","Queue","Map","Tree"], a:1, explain:"Queue is FIFO."},
+      {q:"Removing a middle node in singly linked list is:", choices:["O(1)","O(log n)","O(n)","O(n log n)"], a:2, explain:"You need to find previous node → O(n)."},
+      {q:"Collision handling strategies:", choices:["Chaining","Open addressing","Both","None"], a:2, explain:"Both chaining and open addressing are used."}
+    ]
+  },
+
+  { id:5, title:"Week 5 — Algorithms & patterns", tasks:[
+      "Big-O and amortized analysis.",
+      "Two-pointer & sliding window patterns.",
+      "Hashing patterns (frequency windows).",
+      "Sorting & search compound problems.",
+      "Timed coding challenge set.",
+      "Mini-project: timed problem set (5 problems)."
+    ],
+    quiz:[
+      {q:"Sliding window is used for:", choices:["Sorting","Subarray sums","Tree traversal","Hashing"], a:1, explain:"Sliding window solves subarray sum/window problems."},
+      {q:"Two-pointer technique often runs in:", choices:["O(n^2)","O(n)","O(log n)","O(n log n)"], a:1, explain:"Many two-pointer solutions are O(n)."},
+      {q:"HashSet supports:", choices:["Duplicates","Fast membership","Ordered iteration","Key-value"], a:1, explain:"HashSet provides O(1) membership checks."},
+      {q:"Amortized push on dynamic array:", choices:["O(n)","O(1) amortized","O(log n)","O(n log n)"], a:1, explain:"Push is O(1) amortized."},
+      {q:"Divide & conquer means:", choices:["Greedy","Split & combine","Hashing","Two pointers"], a:1, explain:"Divide & conquer splits problems and combines results."}
+    ]
+  },
+
+  { id:6, title:"Week 6 — OOP & C# essentials", tasks:[
+      "Classes, fields, constructors.",
+      "Inheritance, virtual/override.",
+      "Interfaces & composition.",
+      "Access modifiers: public/private/protected.",
+      "Delegates & events basics.",
+      "Mini-project: entity class hierarchy."
+    ],
+    quiz:[
+      {q:"`override` in C# is used to:", choices:["Hide method","Override virtual base method","Define interface","None"], a:1, explain:"`override` provides new implementation for a virtual method."},
+      {q:"Interfaces contain:", choices:["Fields","Method signatures","Constructors","Private methods"], a:1, explain:"Interfaces define method signatures (modern C# adds defaults)."},
+      {q:"`protected` allows access in:", choices:["Anywhere","Subclasses","Same class only","Assembly only"], a:1, explain:"Protected allows subclass access."},
+      {q:"Events in Unity often use:", choices:["Delegates","Interfaces","Static variables","JSON"], a:0, explain:"Delegates/events are common for callbacks."},
+      {q:"Composition over inheritance when:", choices:["Need polymorphism","Reuse behavior w/o tight coupling","Want static typing","None"], a:1, explain:"Composition reduces coupling while reusing behavior."}
+    ]
+  },
+
+  { id:7, title:"Week 7 — Unity Editor fundamentals", tasks:[
+      "Install Unity, create project, explore layout.",
+      "GameObjects, transforms, parenting.",
+      "Prefabs: create & edit variants.",
+      "Import assets (sprites/models/audio).",
+      "Lighting basics, camera settings.",
+      "Mini-project: scene with player sprite & camera follow."
+    ],
+    quiz:[
+      {q:"A prefab in Unity is:", choices:["Scene","Reusable GameObject template","Script","Shader"], a:1, explain:"Prefab is a template for GameObjects."},
+      {q:"Where to put scripts/assets?", choices:["Hierarchy","Project window","Inspector","Console"], a:1, explain:"The Project window stores assets & scripts."},
+      {q:"2D physics body component is:", choices:["Rigidbody2D","Animator","Canvas","Transform"], a:0, explain:"Use Rigidbody2D for 2D physics."},
+      {q:"Camera Clear Flags control:", choices:["Render order","Background rendering","Physics","Animation"], a:1, explain:"Clear flags affect background rendering."},
+      {q:"To persist shared templates use:", choices:["Copy","Prefabs","Scenes","Build settings"], a:1, explain:"Use prefabs to reuse templates."}
+    ]
+  },
+
+  { id:8, title:"Week 8 — Unity scripting & lifecycle", tasks:[
+      "MonoBehaviour methods: Awake, Start, Update.",
+      "FixedUpdate & physics timing.",
+      "Input handling (legacy/new system).",
+      "Coroutines & yield statements.",
+      "ScriptableObjects basics.",
+      "Mini-project: player controller (move/jump)."
+    ],
+    quiz:[
+      {q:"Method that runs once before Start:", choices:["OnEnable","Awake","Update","FixedUpdate"], a:1, explain:"Awake runs when the script instance is loaded."},
+      {q:"Use FixedUpdate for:", choices:["UI updates","Physics updates","Rendering","Input only"], a:1, explain:"Physics updates should be in FixedUpdate."},
+      {q:"Time.deltaTime is used to:", choices:["Count frames","Frame-independent movement","Pause game","None"], a:1, explain:"Scale movement by deltaTime for consistency."},
+      {q:"Coroutine is for:", choices:["Parallel threads","Timed sequences on main thread","Physics only","Scene loading only"], a:1, explain:"Coroutines run sequences across frames on main thread."},
+      {q:"Old input axis read:", choices:["Input.GetKey()","Input.GetAxis(\"Horizontal\")","GetAxis()","ReadAxis()"], a:1, explain:"Use Input.GetAxis for axis values."}
+    ]
+  },
+
+  { id:9, title:"Week 9 — Game systems", tasks:[
+      "Rigidbody physics, colliders & triggers.",
+      "OnCollisionEnter / OnTriggerEnter handling.",
+      "Camera follow & smoothing (Lerp/SmoothDamp).",
+      "Enemy state machine (patrol/chase).",
+      "Projectiles and object pooling.",
+      "Mini-project: top-down shooter prototype."
+    ],
+    quiz:[
+      {q:"Trigger collider means:", choices:["No physics response but event fired","Full physics response","Disabled collider","None"], a:0, explain:"Triggers fire events but don't apply physics response."},
+      {q:"Object pooling reduces:", choices:["Rendering cost","Memory allocations / GC","Sound quality","Shader complexity"], a:1, explain:"Pooling reduces allocations and GC overhead."},
+      {q:"Camera smoothing uses:", choices:["Lerp / SmoothDamp","Update only","Physics only","IgnoreTimeScale"], a:0, explain:"Lerp or SmoothDamp smooth camera motion."},
+      {q:"For 2D physics use:", choices:["Rigidbody","Rigidbody2D","Rigidbody3D","CharacterController"], a:1, explain:"Rigidbody2D is for 2D physics."},
+      {q:"Non-trigger collision callback is:", choices:["OnTriggerEnter","OnCollisionEnter","Update","Start"], a:1, explain:"OnCollisionEnter handles non-trigger collisions."}
+    ]
+  },
+
+  { id:10, title:"Week 10 — UI, animation & audio", tasks:[
+      "Canvas, anchors, TextMeshPro basics.",
+      "Buttons, menus, HUD layout.",
+      "Animator & blend trees, parameters.",
+      "Audio Sources, mixers, SFX setup.",
+      "Particles & visual polish.",
+      "Mini-project: add UI & SFX to game."
+    ],
+    quiz:[
+      {q:"Canvas Scaler purpose:", choices:["Scale audio","Scale UI across resolutions","Animate sprites","None"], a:1, explain:"Canvas Scaler alters UI scaling per resolution."},
+      {q:"Animator parameter types include:", choices:["Int/Float/Bool/Trigger","String only","Object","None"], a:0, explain:"Animator supports Int, Float, Bool, Trigger."},
+      {q:"Audio mixer groups let you:", choices:["Apply effects & control groups","Render models","Create prefabs","None"], a:0, explain:"Mixer groups apply effects and group volume control."},
+      {q:"Best UI list container:", choices:["Text","ScrollRect with content","Canvas","Animator"], a:1, explain:"ScrollRect with a content panel holds lists."},
+      {q:"Particles are used for:", choices:["Physics","VFX","Audio","UI layout"], a:1, explain:"Particle systems create visual fx like sparks."}
+    ]
+  },
+
+  { id:11, title:"Week 11 — Optimization & testing", tasks:[
+      "Unity Profiler: CPU, GPU, memory usage.",
+      "Reduce GC allocations; pool objects.",
+      "Graphics: draw calls, batching, LOD.",
+      "Write PlayMode & EditMode tests.",
+      "Build settings & platform differences.",
+      "Mini-project: profile & fix top 3 bottlenecks."
+    ],
+    quiz:[
+      {q:"Frequent allocation in Update causes:", choices:["Faster game","GC spikes & stutters","Better memory","None"], a:1, explain:"Allocations cause garbage collection overhead."},
+      {q:"Object pooling reduces:", choices:["CPU only","Memory allocation & GC","Render quality","None"], a:1, explain:"Pooling reduces allocations & GC burden."},
+      {q:"Unity profiler measures:", choices:["CPU/GPU/Memory/Rendering","Only CPU","Only Memory","None"], a:0, explain:"Profiler shows CPU, GPU, memory and rendering data."},
+      {q:"PlayMode tests are for:", choices:["Editor scripts only","Runtime gameplay tests","Build pipelines","None"], a:1, explain:"PlayMode tests run in play mode for runtime behavior."},
+      {q:"Mobile optimization prefers:", choices:["Huge textures","Low draw calls & compressed textures","Uncompressed audio","Complex shaders"], a:1, explain:"Mobile needs low draw calls and compression."}
+    ]
+  },
+
+  { id:12, title:"Week 12 — Final project & portfolio", tasks:[
+      "Define scope and vertical slice (prototype).",
+      "Implement core mechanics & UI.",
+      "Add polish: animations, audio, particles.",
+      "Optimize, bugfix, create build.",
+      "Document, make demo video, publish repo.",
+      "Postmortem & next goals."
+    ],
+    quiz:[
+      {q:"Which MonoBehaviour method to init physics before first frame?", choices:["Start","Awake","Update","OnEnable"], a:1, explain:"Awake runs when the script instance is loaded."},
+      {q:"Binary search complexity:", choices:["O(n)","O(log n)","O(n^2)","O(1)"], a:1, explain:"Binary search is O(log n)."},
+      {q:"Best structure for FIFO ordering:", choices:["Stack","Queue","Map","Set"], a:1, explain:"Queue is FIFO."},
+      {q:"What is object pooling?", choices:["Creating many objects","Reusing objects to reduce allocations","A UI pattern","A shader trick"], a:1, explain:"Pooling reuses objects to avoid frequent allocations."},
+      {q:"`yield return null` in Unity coroutine waits:", choices:["One frame","One second","Until condition","End of physics"], a:0, explain:"`yield return null` waits a frame."}
+    ]
+  }
+];
+
+const FINAL_QUIZ = {
+  id: 'final',
+  title: 'Final Cumulative Quiz (10 questions)',
+  questions: [
+    {q:"Which MonoBehaviour method is best to init physics before first frame?", choices:["Start","Awake","Update","OnEnable"], a:1, explain:"Awake is called when the instance is loaded."},
+    {q:"Binary search Big-O is?", choices:["O(n)","O(log n)","O(n^2)","O(1)"], a:1, explain:"Binary search is O(log n)."},
+    {q:"Best structure for FIFO?", choices:["Stack","Queue","Map","Set"], a:1, explain:"Queue is FIFO."},
+    {q:"In Unity, which enables 3D physics movement?", choices:["Rigidbody2D","Rigidbody","CharacterController","Transform"], a:1, explain:"Rigidbody is used for 3D physics."},
+    {q:"`map` vs `forEach` returns:", choices:["map returns new array","forEach returns new array","both return nothing","both modify array"], a:0, explain:"`map` returns a new transformed array."},
+    {q:"What is object pooling?", choices:["Reusing objects to reduce allocations","Making objects heavy","A render technique","UI layout"], a:0, explain:"Pooling reduces allocations and GC spikes."},
+    {q:"JS: `let` vs `var` key diff?", choices:["let function scoped","var block scoped","let block scoped","var constant"], a:2, explain:"`let` is block scoped; `var` is function scoped."},
+    {q:"Coroutine yield to wait one frame:", choices:["yield return 0","yield return null","yield return WaitForSeconds(0)","yield break"], a:1, explain:"Use `yield return null` to wait one frame."},
+    {q:"Canvas Scaler purpose:", choices:["Scale audio","Scale UI across resolutions","Animate sprites","Physics"], a:1, explain:"Canvas Scaler makes UI adapt to resolution."},
+    {q:"Average quicksort complexity:", choices:["O(n^2)","O(n)","O(n log n)","O(log n)"], a:2, explain:"Average complexity is O(n log n)."}
+  ]
+};
+
+/* ===========================
+   State management
+   =========================== */
+const STORAGE_KEY = 'unityStudy_v1';
+let state = { completedWeeks: [], quizzes: {} }; // quizzes: { weekId: {score, total, ts} }
+
+function loadState(){
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) state = JSON.parse(raw);
+  } catch(e){}
+}
+function saveState(){
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  showToast('Progress saved');
+  renderProgress();
+}
+
+/* ===========================
+   UI rendering
+   =========================== */
+const weeksListEl = document.getElementById('weeksList');
+const weekDetailsEl = document.getElementById('weekDetails');
+const quickQuizListEl = document.getElementById('quickQuizList');
+const completedCountEl = document.getElementById('completedCount');
+const quizzesTakenEl = document.getElementById('quizzesTaken');
+const lastExportEl = document.getElementById('lastExport');
+
+function createWeekCard(w){
+  const done = state.completedWeeks.includes(w.id);
+  const s = document.createElement('div');
+  s.className = 'p-3 border rounded-lg flex items-start justify-between';
+  s.innerHTML = `
+    <div>
+      <div class="flex items-center gap-3">
+        <div class="h-9 w-9 rounded-full flex items-center justify-center font-bold ${done ? 'bg-green-100 text-green-700' : 'bg-indigo-50 text-indigo-700'}">${w.id}</div>
+        <div>
+          <div class="font-semibold">${w.title}</div>
+          <div class="muted text-sm mt-1">${w.tasks[0]} …</div>
+        </div>
+      </div>
+    </div>
+    <div class="flex gap-2 items-center">
+      <button data-week="${w.id}" class="px-3 py-1 text-sm rounded-md ${done ? 'bg-green-600 text-white' : 'bg-indigo-600 text-white'}">${done ? 'Completed' : 'Open'}</button>
+      <button data-quiz="${w.id}" class="px-3 py-1 border rounded-md text-sm">Quiz</button>
+    </div>
+  `;
+  // handlers
+  s.querySelector('[data-week]').onclick = ()=> openWeek(w.id);
+  s.querySelector('[data-quiz]').onclick = ()=> openQuiz(w.id);
+  return s;
+}
+
+function renderWeeks(){
+  weeksListEl.innerHTML = '';
+  PLAN.forEach(w => weeksListEl.appendChild(createWeekCard(w)));
+}
+
+function renderProgress(){
+  completedCountEl.innerText = state.completedWeeks.length;
+  quizzesTakenEl.innerText = Object.keys(state.quizzes || {}).length;
+}
+
+/* Week details panel */
+function openWeek(id){
+  const w = PLAN.find(x => x.id === id);
+  if(!w) return;
+  weekDetailsEl.classList.remove('hidden');
+  weekDetailsEl.innerHTML = `
+    <div class="flex items-start justify-between">
+      <div>
+        <h3 class="text-lg font-bold">${w.title}</h3>
+        <p class="muted mt-1">${w.tasks.length} daily tasks • mini-project included</p>
+      </div>
+      <div class="flex gap-2">
+        <button id="markDoneBtn" class="px-3 py-1 rounded-md ${state.completedWeeks.includes(id) ? 'bg-green-600 text-white' : 'bg-indigo-600 text-white'}">${state.completedWeeks.includes(id) ? 'Completed' : 'Mark week done'}</button>
+        <button id="openQuizBtn" class="px-3 py-1 border rounded-md">Open Quiz</button>
+      </div>
+    </div>
+    <div class="mt-4 grid md:grid-cols-2 gap-3">
+      <div>
+        <h4 class="font-semibold">Daily tasks</h4>
+        <ol class="mt-2 list-decimal list-inside muted">
+          ${w.tasks.map(t => `<li class="mb-1">${t}</li>`).join('')}
+        </ol>
+      </div>
+      <div>
+        <h4 class="font-semibold">Mini-project / notes</h4>
+        <p class="muted mt-2">Work on the mini-project for deeper practice. Link relevant Unity Learn lessons and map the programming concepts you used to implement features.</p>
+        <div class="mt-3 flex gap-2">
+          <a class="px-3 py-1 bg-indigo-50 text-indigo-700 rounded-md text-sm" href="https://learn.unity.com/" target="_blank">Open Unity Learn</a>
+          <button id="openQuizBtn2" class="px-3 py-1 border rounded-md text-sm">Open Quiz</button>
+        </div>
+      </div>
+    </div>
+  `;
+  document.getElementById('markDoneBtn').onclick = ()=>{
+    if(!state.completedWeeks.includes(id)){
+      state.completedWeeks.push(id);
+      saveState();
+      renderWeeks();
+      openWeek(id);
+    } else {
+      // allow unmark
+      if(confirm('Mark this week as NOT completed?')){
+        state.completedWeeks = state.completedWeeks.filter(x=>x!==id);
+        saveState();
+        renderWeeks();
+        openWeek(id);
+      }
+    }
+  };
+  document.getElementById('openQuizBtn').onclick = ()=> openQuiz(id);
+  document.getElementById('openQuizBtn2').onclick = ()=> openQuiz(id);
+}
+
+/* Quick quiz list */
+function renderQuickQuizList(){
+  quickQuizListEl.innerHTML = '';
+  PLAN.forEach(w => {
+    const b = document.createElement('button');
+    b.className = 'px-3 py-2 border rounded-md text-sm w-full text-left';
+    b.innerText = `${w.id}. ${w.title}`;
+    b.onclick = ()=> openQuiz(w.id);
+    quickQuizListEl.appendChild(b);
+  });
+  const finalBtn = document.createElement('button');
+  finalBtn.className = 'px-3 py-2 mt-3 w-full bg-yellow-50 text-yellow-700 border rounded-md text-sm';
+  finalBtn.innerText = 'Final cumulative quiz';
+  finalBtn.onclick = ()=> openQuiz('final');
+  quickQuizListEl.appendChild(finalBtn);
+}
+
+/* ===========================
+   Quiz engine
+   =========================== */
+const quizModalEl = document.getElementById('quizModal');
+const quizTitleEl = document.getElementById('quizTitle');
+const quizSubtitleEl = document.getElementById('quizSubtitle');
+const quizContentEl = document.getElementById('quizContent');
+const quizProgressText = document.getElementById('quizProgressText');
+const prevQBtn = document.getElementById('prevQ');
+const nextQBtn = document.getElementById('nextQ');
+const finishQBtn = document.getElementById('finishQ');
+const closeQuizBtn = document.getElementById('closeQuiz');
+
+let currentQuiz = null;
+let currentIndex = 0;
+let answers = []; // user answers: null or index
+
+function openQuiz(id){
+  if(id === 'final'){
+    currentQuiz = FINAL_QUIZ;
+  } else {
+    const week = PLAN.find(w => w.id === id);
+    if(!week) return;
+    currentQuiz = { id:`week-${week.id}`, title: week.title + ' Quiz', questions: week.quiz };
+  }
+  answers = new Array(currentQuiz.questions.length).fill(null);
+  currentIndex = 0;
+  showQuiz();
+  quizModalEl.classList.remove('hidden');
+  quizModalEl.style.display = 'flex';
+}
+
+function closeQuiz(){
+  quizModalEl.classList.add('hidden');
+  quizModalEl.style.display = 'none';
+}
+
+closeQuizBtn.onclick = closeQuiz;
+document.getElementById('closeQuiz').onclick = closeQuiz;
+document.getElementById('prevQ').onclick = ()=> { if(currentIndex>0){ currentIndex--; showQuiz(); } };
+document.getElementById('nextQ').onclick = ()=> { if(currentIndex < currentQuiz.questions.length-1){ currentIndex++; showQuiz(); } else { finishQuiz(); } };
+finishQBtn.onclick = finishQuiz;
+
+function showQuiz(){
+  const q = currentQuiz.questions[currentIndex];
+  quizTitleEl.innerText = currentQuiz.title;
+  quizSubtitleEl.innerText = `${currentQuiz.id} · question ${currentIndex+1} / ${currentQuiz.questions.length}`;
+  quizContentEl.innerHTML = `
+    <div class="p-3 border rounded-md">
+      <div class="font-semibold">${q.q}</div>
+      <div class="mt-3 space-y-2" id="choicesContainer"></div>
+      <div class="mt-3 muted text-sm" id="explainArea"></div>
+    </div>
+  `;
+  const choicesEl = document.getElementById('choicesContainer');
+  q.choices.forEach((c,i)=>{
+    const ch = document.createElement('button');
+    ch.className = 'w-full text-left px-3 py-2 border rounded-md text-sm';
+    if(answers[currentIndex] !== null){
+      // already answered — show feedback
+      if(i === q.a) ch.classList.add('border-green-500','bg-green-50');
+      if(i === answers[currentIndex] && answers[currentIndex] !== q.a) ch.classList.add('border-red-400','bg-red-50');
+      ch.disabled = true;
+    }
+    ch.innerText = c;
+    ch.onclick = ()=>{
+      // lock answer
+      answers[currentIndex] = i;
+      // show explanation
+      const explain = document.getElementById('explainArea');
+      if(i === q.a){
+        explain.innerHTML = `<div class="text-green-700 font-medium">Correct</div><div class="muted text-sm mt-1">${q.explain}</div>`;
+      } else {
+        explain.innerHTML = `<div class="text-red-600 font-medium">Incorrect</div><div class="muted text-sm mt-1">Correct: ${q.choices[q.a]}. ${q.explain}</div>`;
+      }
+      // re-render choices to lock them & color
+      showQuiz();
+    };
+    choicesEl.appendChild(ch);
+  });
+
+  // progress text
+  quizProgressText.innerText = `Question ${currentIndex+1} / ${currentQuiz.questions.length}`;
+  // toggle next/finish buttons
+  if(currentIndex === currentQuiz.questions.length-1){
+    nextQBtn.classList.add('hidden');
+    finishQBtn.classList.remove('hidden');
+  } else {
+    nextQBtn.classList.remove('hidden');
+    finishQBtn.classList.add('hidden');
+  }
+}
+
+/* finish quiz: score & save */
+function finishQuiz(){
+  let score = 0;
+  currentQuiz.questions.forEach((q,i)=> {
+    if(answers[i] === q.a) score++;
+  });
+  const total = currentQuiz.questions.length;
+  // save to state if week quiz
+  const key = currentQuiz.id;
+  if(key.startsWith('week-')){
+    const weekId = parseInt(key.split('-')[1],10);
+    state.quizzes[`week-${weekId}`] = {score, total, ts:Date.now()};
+  } else if(key === 'final'){
+    state.quizzes['final'] = {score, total, ts:Date.now()};
+  }
+  saveState();
+  // result display
+  quizContentEl.innerHTML = `
+    <div class="p-4 text-center">
+      <div class="text-2xl font-bold">${score} / ${total}</div>
+      <div class="muted mt-2">Score</div>
+      <div class="mt-4">
+        <button id="closeAfter" class="px-4 py-2 bg-indigo-600 text-white rounded-md">Close</button>
+        <button id="viewAnswers" class="px-4 py-2 ml-2 border rounded-md">Review Qs</button>
+      </div>
+    </div>
+  `;
+  document.getElementById('closeAfter').onclick = closeQuiz;
+  document.getElementById('viewAnswers').onclick = ()=> reviewAnswers();
+}
+
+/* review answers: show each question with user selection & correct answer */
+function reviewAnswers(){
+  quizContentEl.innerHTML = '';
+  currentQuiz.questions.forEach((q,i)=>{
+    const block = document.createElement('div');
+    block.className = 'p-3 border-b';
+    const user = answers[i];
+    block.innerHTML = `
+      <div class="font-semibold">${i+1}. ${q.q}</div>
+      <div class="mt-2 space-y-1">
+        ${q.choices.map((c,j)=>{
+          const cls = (j===q.a) ? 'text-green-700 font-medium' : (j===user ? 'text-red-600' : 'muted');
+          return `<div class="${cls}">${j+1}. ${c}</div>`;
+        }).join('')}
+      </div>
+      <div class="muted text-sm mt-2">${q.explain}</div>
+    `;
+    quizContentEl.appendChild(block);
+  });
+  quizProgressText.innerText = 'Review mode';
+  prevQBtn.classList.add('hidden');
+  nextQBtn.classList.add('hidden');
+  finishQBtn.classList.add('hidden');
+}
+
+/* ===========================
+   Export & reset
+   =========================== */
+document.getElementById('resetBtn').onclick = ()=>{
+  if(confirm('Reset all local progress & quiz results?')){
+    state = { completedWeeks: [], quizzes: {} };
+    saveState();
+    renderWeeks();
+    renderQuickQuizList();
+    weekDetailsEl.classList.add('hidden');
+  }
+};
+
+document.getElementById('exportBtn').onclick = ()=>{
+  const payload = { state, plan: PLAN, finalQuiz: FINAL_QUIZ, exportedAt: new Date().toISOString() };
+  const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'study-progress.json';
+  a.click();
+  URL.revokeObjectURL(url);
+  lastExportEl.innerText = new Date().toLocaleString();
+  showToast('Exported progress JSON');
+};
+
+/* toast */
+function showToast(msg){
+  const t = document.getElementById('toast');
+  t.innerText = msg;
+  t.classList.remove('hidden');
+  setTimeout(()=> t.classList.add('hidden'), 1800);
+}
+
+/* ===========================
+   init
+   =========================== */
+loadState();
+renderWeeks();
+renderQuickQuizList();
+renderProgress();
+saveState(); // ensure persisted on first load
+
+// Expose openWeek when clicking from outside (good UX)
+window.openWeek = openWeek;
+</script>
+</body>
+</html>
