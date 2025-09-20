@@ -57,8 +57,7 @@ This project is an AI-powered tool designed to detect, analyze, and visualize th
 ---
 
 ## 📸 Screenshots
-*(Add UI dashboard, upload screen, results panel, etc.)*  
-
+["Input Fields"]("https://github.com/mdaminxf/newsorchestra/blob/main/public/image%20(4).png")
 ---
 
 ## 🔮 Future Enhancements
