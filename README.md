@@ -62,9 +62,13 @@ This project is an AI-powered tool designed to detect, analyze, and visualize th
 ---
 
 ## 🔮 Future Enhancements
-- 📡 Real-time monitoring of **Twitter/X, Facebook feeds**.  
-- 🗣 Multilingual misinformation detection.  
-- 📱 Mobile app version.  
+- 🤖 **Vertex AI Integration** – Leverage Google Cloud’s Vertex AI for scalable training and inference.  
+- 📽️ **Video Misinformation Detection** – Extend analysis to video content (frames + metadata).  
+- 🔉 **Audio Misinformation Detection** – Speech-to-text + NLP pipeline for detecting manipulated audio.  
+- 📡 **Real-Time Social Media Monitoring** – Continuous tracking of misinformation across Twitter/X, Facebook, and other platforms.  
+- 🗣 **Multilingual Support** – Detect and analyze misinformation in multiple languages.  
+- 📱 **Mobile Application** – Cross-platform mobile app for accessibility and wider adoption.  
+
 
 ---
 
