@@ -57,7 +57,12 @@ This project is an AI-powered tool designed to detect, analyze, and visualize th
 ---
 
 ## 📸 Screenshots
+*Input Fields*
 ![Input Fields](https://github.com/mdaminxf/newsorchestra/blob/main/public/image%20(4).png)
+*Analysis Summary*
+![Analysis Summary](https://github.com/mdaminxf/newsorchestra/blob/main/public/image%20(1).png)
+![Ai Resoning](https://github.com/mdaminxf/newsorchestra/blob/main/public/image%20(2).png)
+![Evidence Section](https://github.com/mdaminxf/newsorchestra/blob/main/public/image%20(3).png)
 ---
 
 ## 🔮 Future Enhancements
