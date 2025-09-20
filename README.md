@@ -36,13 +36,14 @@ This project is an AI-powered tool designed to detect, analyze, and visualize th
 
 ## 📂 Project Structure
 ```bash
-├── frontend/        # React + Tailwind UI
-├── backend/         # Flask/FastAPI ML server
-│   ├── models/      # Hugging Face + custom models
-│   ├── utils/       # ImageHash, Pillow, parsing tools
-├── public/          # Assets & icons
-└── README.md        # Documentation
+├── frontend/            # React + Tailwind UI
+├── backend/             # Flask/FastAPI ML server
+│   ├── app.py           # Hugging Face + custom models, ImageHash, Pillow, parsing tools, Genai
+|   |── requirements.txt # All required Packages
+├── public/              # Assets
+└── README.md            # Documentation
 ```
+
 
 ---
 
